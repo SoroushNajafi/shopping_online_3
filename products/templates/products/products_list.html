@@ -1,16 +1,532 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block page_title %}
     Products list
 {% endblock %}
 
 {% block content %}
-    <h4>Products List</h4>
-    <hr>
-    {% for product in products %}
-        <a href="{{ product.get_absolute_url }}"><p>{{ product.title }}</p></a>
-        <p>{{ product.price }} $</p>
-        <hr>
-    {% endfor %}
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
 
+
+{% include 'Breadcrumb.html' %}
+
+        <!-- Main Content Wrapper Start -->
+        <div  class="main-content-wrapper">
+            <div class="shop-page-wrapper ptb--80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-8 order-lg-2 mb-md--50">
+                            <div class="shop-toolbar mb--50">
+                                <div class="row align-items-center">
+                                    <div class="col-md-5 mb-sm--30 mb-xs--10">
+                                        <div class="shop-toolbar__left">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="shop-toolbar__right">
+                                            <p class="product-pages">Showing Result  08 Among  72</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-products">
+                                <div class="row">
+
+                                    {% for product in products %}
+                                    <div class="col-xl-4 col-sm-6 mb--50">
+                                        <div class="payne-product">
+                                            <div class="product__inner">
+                                                <div class="product__image">
+                                                    <figure class="product__image--holder">
+                                                        <img src="{% static 'img/products/product-03-270x300.jpg' %}" alt="Product">
+                                                    </figure>
+                                                    <a href="{{ product.get_absolute_url }}" class="product__overlay"></a>
+                                                </div>
+                                                <div class="product__info">
+                                                    <div class="product__info--left">
+                                                        <h3 class="product__title">
+                                                            <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                                        </h3>
+                                                        <div class="product__price">
+                                                            <span class="money">{{ product.price }}</span>
+                                                            <span class="sign">$</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__info--right">
+                                                        <span class="product__rating">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            <nav class="pagination-wrap">
+                                <ul class="pagination">
+                                    <li><span class="page-number current">1</span></li>
+                                    <li><a href="#" class="page-number">2</a></li>
+                                    <li><span class="dot"></span></li>
+                                    <li><span class="dot"></span></li>
+                                    <li><span class="dot"></span></li>
+                                    <li><a href="#" class="page-number">16</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 order-lg-1">
+                            <aside class="shop-sidebar">
+                                <div class="shop-widget mb--40">
+                                    <h3 class="widget-title mb--25">Category</h3>
+                                    <ul class="widget-list category-list">
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Winter Collection</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Women’s Clothes</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Men’s Clothes</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Kid’s Clothes</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Uncategorized</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">Accessories</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="category-title">New Arrival</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="shop-widget mb--40">
+                                    <h3 class="widget-title mb--30">Color</h3>
+                                    <div class="widget-color">
+                                        <a href="shop.html" class="red">Red</a>
+                                        <a href="shop.html" class="pink">Pink</a>
+                                        <a href="shop.html" class="black">black</a>
+                                        <a href="shop.html" class="brown">brown</a>
+                                        <a href="shop.html" class="blue">blue</a>
+                                        <a href="shop.html" class="cholate">cholate</a>
+                                        <a href="shop.html" class="copper">copper</a>
+                                        <a href="shop.html" class="gray">grey</a>
+                                    </div>
+                                </div>
+                                <div class="shop-widget mb--40">
+                                    <h3 class="widget-title mb--25">Price</h3>
+                                    <ul class="widget-list price-list">
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>Low - Medium</span>
+                                                <strong class="font-weight-medium">$10.00 - $45.00</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>Medium - High</span>
+                                                <strong class="font-weight-medium">$45.00 - $60.00</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>High - Avobe</span>
+                                                <strong class="font-weight-medium">$60.00 - $200</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="shop-widget mb--40">
+                                    <h3 class="widget-title mb--25">Brand</h3>
+                                    <ul class="widget-list brand-list">
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>Walmart</span>
+                                                <strong class="color--red font-weight-medium">10</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>Yellow</span>
+                                                <strong class="color--red font-weight-medium">50</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>H &amp; M</span>
+                                                <strong class="color--red font-weight-medium">46</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span>Black &amp; White</span>
+                                                <strong class="color--red font-weight-medium">46</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="shop-widget">
+                                    <h3 class="widget-title mb--25">Tag</h3>
+                                    <div class="tagcloud">
+                                        <a href="shop.html">Cloth</a>
+                                        <a href="shop.html">Blazer</a>
+                                        <a href="shop.html">Jacket</a>
+                                        <a href="shop.html">Polo Shirt</a>
+                                        <a href="shop.html">T-Shirt</a>
+                                        <a href="shop.html">Shoes</a>
+                                        <a href="shop.html">Pant</a>
+                                        <a href="shop.html">Party Dress</a>
+                                        <a href="shop.html">Coktail Dress</a>
+                                        <a href="shop.html">Sweater</a>
+                                        <a href="shop.html">Jeans</a>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Wrapper Start -->
+
+
+        <!-- OffCanvas Menu Start -->
+        <aside class="offcanvas-navigation" id="offcanvasnav">
+            <div class="offcanvas-navigation__inner">
+                <a href="" class="btn-close">
+                    <i class="flaticon-cross"></i>
+                    <span class="sr-only">Close Offcanvas Navigtion</span>
+                </a>
+                <div class="offcanvas-navigation__top">
+                    <ul class="offcanvas-menu">
+                        <li class="has-children">
+                            <a href="#">
+                                <span class="mm-text">Home</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="has-children">
+                                    <a href="index.html">
+                                        <span class="mm-text">Home One</span>
+                                    </a>
+                                </li>
+                                <li class="has-children">
+                                    <a href="index-02.html">
+                                        <span class="mm-text">Home Two</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="shop.html">
+                                <span class="mm-text">New Arrivals</span>
+                            </a>
+                        </li>
+                        <li class="has-children">
+                            <a href="#">
+                                <span class="mm-text">Shop</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="has-children">
+                                    <a href="#">
+                                        <span class="overlay-menu__title">Shop Layout</span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="shop-fullwidth.html">
+                                                <span class="mm-text">Full Width</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">
+                                                <span class="mm-text">Left Sidebar</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-right-sidebar.html">
+                                                <span class="mm-text">Right Sidebar</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-three-columns.html">
+                                                <span class="mm-text">Three Columns</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-four-columns.html">
+                                                <span class="mm-text">Four Columns</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-list.html">
+                                                <span class="mm-text">Full Width</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-list-sidebar.html">
+                                                <span class="mm-text">Left Sidebar</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-list-right-sidebar.html">
+                                                <span class="mm-text">Right Sidebar</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="#">
+                                        <span class="overlay-menu__title">Single Product</span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="product-details.html">
+                                                <span class="mm-text">Tab Style 1</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-tab-style-2.html">
+                                                <span class="mm-text">Tab Style 2</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-tab-style-3.html">
+                                                <span class="mm-text">Tab Style 3</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-gallery-left.html">
+                                                <span class="mm-text">Gallery Left</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-gallery-right.html">
+                                                <span class="mm-text">Gallery Right</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-sticky-left.html">
+                                                <span class="mm-text">Sticky Left</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-sticky-right.html">
+                                                <span class="mm-text">Sticky Right</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-slider-box.html">
+                                                <span class="mm-text">Slider Box</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-slider-full-width.html">
+                                                <span class="mm-text">Slider Box Full Width</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-affiliate.html">
+                                                <span class="mm-text">Affiliate Proudct</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-variable.html">
+                                                <span class="mm-text">Variable Proudct</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details-group.html">
+                                                <span class="mm-text">Group Product</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="#">
+                                        <span class="overlay-menu__title">Shop Pages</span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="my-account.html">
+                                                <span class="mm-text">My Account</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html">
+                                                <span class="mm-text">Shopping Cart</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="checkout.html">
+                                                <span class="mm-text">Check Out</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="wishlist.html">
+                                                <span class="mm-text">Wishlist</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="order-tracking.html">
+                                                <span class="mm-text">Order tracking</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="compare.html">
+                                                <span class="mm-text">compare</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <a href="#">
+                                <span class="mm-text">Pages</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="my-account.html">
+                                        <span class="mm-text">My Account</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="checkout.html">
+                                        <span class="mm-text">Checkout</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="cart.html">
+                                        <span class="mm-text">Cart</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="compare.html">
+                                        <span class="mm-text">Compare</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="order-tracking.html">
+                                        <span class="mm-text">Track Order</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="wishlist.html">
+                                        <span class="mm-text">Wishlist</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contact-us.html">
+                                <span class="mm-text">Contact Us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!-- OffCanvas Menu End -->
+
+        <!-- Mini Cart Start -->
+        <aside class="mini-cart" id="miniCart">
+            <div class="mini-cart-wrapper">
+                <div class="mini-cart__close">
+                    <a href="#" class="btn-close"></a>
+                </div>
+                <div class="mini-cart-inner">
+                    <h3 class="mini-cart__heading mb--45">Shopping Cart</h3>
+                    <div class="mini-cart__content">
+                        <ul class="mini-cart__list">
+                            <li class="mini-cart__product">
+                                <a href="#" class="mini-cart__product-remove">
+                                    <i class="flaticon-cross"></i>
+                                </a>
+                                <div class="mini-cart__product-image">
+                                    <img src="assets/img/products/product-11-90x90.jpg" alt="products">
+                                </div>
+                                <div class="mini-cart__product-content">
+                                    <a class="mini-cart__product-title" href="product-details.html">Lexbaro Begadi</a>
+                                    <span class="mini-cart__product-quantity">1 x $49.00</span>
+                                </div>
+                            </li>
+                            <li class="mini-cart__product">
+                                <a href="#" class="mini-cart__product-remove">
+                                    <i class="flaticon-cross"></i>
+                                </a>
+                                <div class="mini-cart__product-image">
+                                    <img src="assets/img/products/product-12-90x90.jpg" alt="products">
+                                </div>
+                                <div class="mini-cart__product-content">
+                                    <a class="mini-cart__product-title" href="product-details.html">Lexbaro Begadi</a>
+                                    <span class="mini-cart__product-quantity">1 x $49.00</span>
+                                </div>
+                            </li>
+                            <li class="mini-cart__product">
+                                <a href="#" class="mini-cart__product-remove">
+                                    <i class="flaticon-cross"></i>
+                                </a>
+                                <div class="mini-cart__product-image">
+                                    <img src="assets/img/products/product-13-90x90.jpg" alt="products">
+                                </div>
+                                <div class="mini-cart__product-content">
+                                    <a class="mini-cart__product-title" href="product-details.html">Lexbaro Begadi</a>
+                                    <span class="mini-cart__product-quantity">1 x $49.00</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mini-cart__total">
+                            <span>Subtotal</span>
+                            <span class="ammount">$98.00</span>
+                        </div>
+                        <div class="mini-cart__buttons">
+                            <a href="cart.html" class="btn btn-fullwidth btn-bg-primary mb--20">View Cart</a>
+                            <a href="checkout.html" class="btn btn-fullwidth btn-bg-primary">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Mini Cart End -->
+
+
+        <!-- Global Overlay Start -->
+        <div class="global-overlay"></div>
+        <!-- Global Overlay End -->
+
+        <!-- Scroll To Top Start -->
+        <a class="scroll-to-top" href=""><i class="fa fa-angle-double-up"></i></a>
+        <!-- Scroll To Top End -->
+    </div>
+    <!-- Main Wrapper End -->
 {% endblock %}
