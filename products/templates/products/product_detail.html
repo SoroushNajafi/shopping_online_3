@@ -2,6 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load comment_tag %}
+{% load i18n %}
 
 {% block page_title %}
     Product detail
@@ -162,7 +163,7 @@
                                 </div>
                                 <button type="button" class="btn btn-shape-square btn-size-sm"
                                         onclick="window.location.href='cart.html'">
-                                    Add To Cart
+                                    {% trans 'Add To Cart' %}
                                 </button>
                             </div>
                             <div class="product-footer-meta">
@@ -183,12 +184,12 @@
                                 <button type="button" class="nav-link active" id="nav-description-tab"
                                         data-bs-toggle="tab"
                                         data-bs-target="#nav-description" role="tab" aria-selected="true">
-                                    <span>Description</span>
+                                    <span>{% trans 'Description' %}</span>
                                 </button>
                                 <button type="button" class="nav-link" id="nav-info-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-info" role="tab"
                                         aria-selected="true">
-                                    <span>Additional Information</span>
+                                    <span>{% trans 'Additional Information' %}</span>
                                 </button>
                                 <button type="button" class="nav-link" id="nav-reviews-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-reviews"
@@ -279,14 +280,14 @@
                                         <div class="review-form-wrapper">
                                             <div class="row">
                                                 <div class="col-lg-8">
-                                                    <h1>Add a review</h1>
+                                                    <h1>{% trans 'Add a review' %}</h1>
                                                     <form action="{% url 'comment_create' product.id %}" class="form pr--30" method="post">
                                                         {% csrf_token %}
                                                         {{ comment_form|crispy }}
                                                         <div class="form__group mt-2">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    <input type="submit" value="Submit Now"
+                                                                    <input type="submit" value="{% trans 'Submit' %}"
                                                                            class="btn btn-size-md">
                                                                 </div>
                                                             </div>
