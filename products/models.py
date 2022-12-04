@@ -36,8 +36,8 @@ class Comment(models.Model):
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='comments')
-    body = models.TextField()
-    stars = models.CharField(max_length=10, choices=PRODUCT_STARS)
+    body = models.TextField(verbose_name='your review')
+    stars = models.CharField(verbose_name='your score to this product', max_length=10, choices=PRODUCT_STARS)
 
     active = models.BooleanField(default=True)
 
