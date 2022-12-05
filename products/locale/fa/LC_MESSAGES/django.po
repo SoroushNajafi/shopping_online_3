@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-04 12:45+0330\n"
+"POT-Creation-Date: 2022-12-05 12:25+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,9 +45,21 @@ msgstr "نظر شما"
 msgid "your score to this product"
 msgstr "امتیاز شما به این محصول"
 
+#: .\templates\products\product_detail.html:8
+msgid "Product detail"
+msgstr "جزئیات محصول"
+
+#: .\templates\products\product_detail.html:158
+msgid "Quantity:"
+msgstr "تعداد:"
+
 #: .\templates\products\product_detail.html:166
 msgid "Add To Cart"
 msgstr "افزودن به سبد خرید"
+
+#: .\templates\products\product_detail.html:170
+msgid "Category:"
+msgstr "دسته بندی:"
 
 #: .\templates\products\product_detail.html:187
 msgid "Description"
@@ -57,10 +69,62 @@ msgstr "توضیحات"
 msgid "Additional Information"
 msgstr "اطلاعات تکمیلی"
 
-#: .\templates\products\product_detail.html:283
+#: .\templates\products\product_detail.html:197
+msgid "Reviews"
+msgstr "نظرات"
+
+#: .\templates\products\product_detail.html:207
+msgid "Characteristics :"
+msgstr "مشخصات:"
+
+#: .\templates\products\product_detail.html:225
+msgid "Weight"
+msgstr "وزن"
+
+#: .\templates\products\product_detail.html:229
+msgid "Dimensions"
+msgstr "ابعاد"
+
+#: .\templates\products\product_detail.html:249
+msgid "review for"
+msgstr "نظر برای"
+
+#: .\templates\products\product_detail.html:282
 msgid "Add a review"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:290
+#: .\templates\products\product_detail.html:289
 msgid "Submit"
 msgstr "ارسال"
+
+#: .\templates\products\product_detail.html:304
+msgid "Related Products"
+msgstr "محصولات مرتبط"
+
+#: .\templates\products\products_list.html:6
+msgid "Products list"
+msgstr "لیست محصولات"
+
+#: .\templates\products\products_list.html:89
+msgid "Category"
+msgstr "دسته بندی"
+
+#: .\templates\products\products_list.html:234
+msgid "Shopping Cart"
+msgstr "سبد خرید"
+
+#: .\templates\products\products_list.html:275
+msgid "total"
+msgstr "جمع کل"
+
+#: .\templates\products\products_list.html:279
+msgid "View Cart"
+msgstr "مشاهده سبد خرید"
+
+#: .\templates\products\products_list.html:280
+msgid "Checkout"
+msgstr "پرداخت"
+
+#: .\views.py:38
+msgid "Your comment added successfully"
+msgstr "نظر شما با موفقیت اضافه شد"

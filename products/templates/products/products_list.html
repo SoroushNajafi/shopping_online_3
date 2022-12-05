@@ -1,8 +1,9 @@
 {% extends '_base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block page_title %}
-    Products list
+    {% trans 'Products list' %}
 {% endblock %}
 
 {% block content %}
@@ -85,7 +86,7 @@
                         <div class="col-xl-3 col-lg-4 order-lg-1">
                             <aside class="shop-sidebar">
                                 <div class="shop-widget mb--40">
-                                    <h3 class="widget-title mb--25">Category</h3>
+                                    <h3 class="widget-title mb--25">{% trans 'Category' %}</h3>
                                     <ul class="widget-list category-list">
                                         <li>
                                             <a href="shop.html">
@@ -230,7 +231,7 @@
                     <a href="#" class="btn-close"></a>
                 </div>
                 <div class="mini-cart-inner">
-                    <h3 class="mini-cart__heading mb--45">Shopping Cart</h3>
+                    <h3 class="mini-cart__heading mb--45">{% trans 'Shopping Cart' %}</h3>
                     <div class="mini-cart__content">
                         <ul class="mini-cart__list">
                             <li class="mini-cart__product">
@@ -271,12 +272,12 @@
                             </li>
                         </ul>
                         <div class="mini-cart__total">
-                            <span>Subtotal</span>
+                            <span>{% trans 'total' %}</span>
                             <span class="ammount">$98.00</span>
                         </div>
                         <div class="mini-cart__buttons">
-                            <a href="cart.html" class="btn btn-fullwidth btn-bg-primary mb--20">View Cart</a>
-                            <a href="checkout.html" class="btn btn-fullwidth btn-bg-primary">Checkout</a>
+                            <a href="cart.html" class="btn btn-fullwidth btn-bg-primary mb--20">{% trans 'View Cart' %}</a>
+                            <a href="checkout.html" class="btn btn-fullwidth btn-bg-primary">{% trans 'Checkout' %}</a>
                         </div>
                     </div>
                 </div>
