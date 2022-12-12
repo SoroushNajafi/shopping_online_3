@@ -28,11 +28,13 @@
                                                 "asNavFor": ".nav-slider"
                                             }'>
                                             <div class="item">
+                                                {% if product.image %}
                                                 <figure class="product-gallery__image zoom">
-                                                    <img src="{% static 'img/products/product-03-500x555.png' %}"
+                                                    <img src="{{ product.image.url }}"
                                                          alt="Product">
                                                     <span class="product-badge sale">Sale</span>
                                                 </figure>
+                                                {% endif %}
                                             </div>
                                             <div class="item">
                                                 <figure class="product-gallery__image zoom">
@@ -148,9 +150,9 @@
                                 </div>
                             </div>
                             <h3 class="product-title mb--20">{{ product.title }}</h3>
-                            <p class="product-short-description mb--20">{{ product.description|truncatechars:10 }}</p>
+                            <p class="product-short-description mb--20">{{ product.description|truncatewords:5 }}</p>
                             <div class="product-price-wrapper mb--25">
-                                <span class="money">${{ product.price }}</span>
+                                <span class="money">{% trans '$' %}{{ product.price }}</span>
                             </div>
                             <div
                                     class="product-action d-flex flex-sm-row align-items-sm-center flex-column align-items-start mb--30">
@@ -218,12 +220,7 @@
 
                                         <h5 class="product-description__heading">{% trans 'Characteristics :' %}</h5>
                                         <ul>
-                                            <li><i class="fa fa-circle"></i><span>Rsit amet, consectetur
-                                                        adipisicing elit, sed do eiusmod tempor inc.</span></li>
-                                            <li><i class="fa fa-circle"></i><span>sunt in culpa qui officia
-                                                        deserunt mollit anim id est laborum. </span></li>
-                                            <li><i class="fa fa-circle"></i><span>Lorem ipsum dolor sit amet,
-                                                        consec do eiusmod tincididu. </span></li>
+                                            <li><i class="fa fa-circle"></i><span>{{ product.characteristic }}</span></li>
                                         </ul>
 
                                     </div>
@@ -235,22 +232,22 @@
                                             <tbody>
                                             <tr>
                                                 <th>{% trans 'Weight' %}</th>
-                                                <td>57 kg</td>
+                                                <td>{{ product.weight }} kg</td>
                                             </tr>
                                             <tr>
                                                 <th>{% trans 'Dimensions' %}</th>
-                                                <td>160 × 152 × 110 cm</td>
+                                                <td>{{ product.dimension }}</td>
                                             </tr>
-                                            <tr>
-                                                <th>Color</th>
-                                                <td>
-                                                    <a href="shop.html">Black</a>,
-                                                    <a href="shop.html">Gray</a>,
-                                                    <a href="shop.html">Red</a>,
-                                                    <a href="shop.html">Violet</a>,
-                                                    <a href="shop.html">Yellow</a>
-                                                </td>
-                                            </tr>
+{#                                            <tr>#}
+{#                                                <th>Color</th>#}
+{#                                                <td>#}
+{#                                                    <a href="shop.html">Black</a>,#}
+{#                                                    <a href="shop.html">Gray</a>,#}
+{#                                                    <a href="shop.html">Red</a>,#}
+{#                                                    <a href="shop.html">Violet</a>,#}
+{#                                                    <a href="shop.html">Yellow</a>#}
+{#                                                </td>#}
+{#                                            </tr>#}
                                             </tbody>
                                         </table>
                                     </div>

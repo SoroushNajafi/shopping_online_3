@@ -9,6 +9,10 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=5, decimal_places=2)
     active = models.BooleanField(default=True)
+    image = models.ImageField(upload_to='product/product_img/', blank=True)
+    dimension = models.CharField(blank=True, max_length=60)
+    weight = models.PositiveIntegerField(null=True)
+    characteristic = models.TextField(null=True)
 
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)

@@ -41,7 +41,9 @@
                                             <div class="product__inner">
                                                 <div class="product__image">
                                                     <figure class="product__image--holder">
-                                                        <img src="{% static 'img/products/product-03-270x300.jpg' %}" alt="Product">
+                                                        {% if product.image %}
+                                                        <img src="{{ product.image.url }}">
+                                                        {% endif %}
                                                     </figure>
                                                     <a href="{{ product.get_absolute_url }}" class="product__overlay"></a>
                                                 </div>
@@ -132,87 +134,87 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="shop-widget mb--40">
-                                    <h3 class="widget-title mb--30">Color</h3>
-                                    <div class="widget-color">
-                                        <a href="shop.html" class="red">Red</a>
-                                        <a href="shop.html" class="pink">Pink</a>
-                                        <a href="shop.html" class="black">black</a>
-                                        <a href="shop.html" class="brown">brown</a>
-                                        <a href="shop.html" class="blue">blue</a>
-                                        <a href="shop.html" class="cholate">cholate</a>
-                                        <a href="shop.html" class="copper">copper</a>
-                                        <a href="shop.html" class="gray">grey</a>
-                                    </div>
-                                </div>
-                                <div class="shop-widget mb--40">
-                                    <h3 class="widget-title mb--25">Price</h3>
-                                    <ul class="widget-list price-list">
-                                        <li>
-                                            <a href="shop.html">
-                                                <span>Low - Medium</span>
-                                                <strong class="font-weight-medium">$10.00 - $45.00</strong>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop.html">
-                                                <span>Medium - High</span>
-                                                <strong class="font-weight-medium">$45.00 - $60.00</strong>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop.html">
-                                                <span>High - Avobe</span>
-                                                <strong class="font-weight-medium">$60.00 - $200</strong>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="shop-widget mb--40">
-                                    <h3 class="widget-title mb--25">Brand</h3>
-                                    <ul class="widget-list brand-list">
-                                        <li>
-                                            <a href="shop.html">
-                                                <span>Walmart</span>
-                                                <strong class="color--red font-weight-medium">10</strong>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop.html">
-                                                <span>Yellow</span>
-                                                <strong class="color--red font-weight-medium">50</strong>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop.html">
-                                                <span>H &amp; M</span>
-                                                <strong class="color--red font-weight-medium">46</strong>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop.html">
-                                                <span>Black &amp; White</span>
-                                                <strong class="color--red font-weight-medium">46</strong>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="shop-widget">
-                                    <h3 class="widget-title mb--25">Tag</h3>
-                                    <div class="tagcloud">
-                                        <a href="shop.html">Cloth</a>
-                                        <a href="shop.html">Blazer</a>
-                                        <a href="shop.html">Jacket</a>
-                                        <a href="shop.html">Polo Shirt</a>
-                                        <a href="shop.html">T-Shirt</a>
-                                        <a href="shop.html">Shoes</a>
-                                        <a href="shop.html">Pant</a>
-                                        <a href="shop.html">Party Dress</a>
-                                        <a href="shop.html">Coktail Dress</a>
-                                        <a href="shop.html">Sweater</a>
-                                        <a href="shop.html">Jeans</a>
-                                    </div>
-                                </div>
+{#                                <div class="shop-widget mb--40">#}
+{#                                    <h3 class="widget-title mb--30">Color</h3>#}
+{#                                    <div class="widget-color">#}
+{#                                        <a href="shop.html" class="red">Red</a>#}
+{#                                        <a href="shop.html" class="pink">Pink</a>#}
+{#                                        <a href="shop.html" class="black">black</a>#}
+{#                                        <a href="shop.html" class="brown">brown</a>#}
+{#                                        <a href="shop.html" class="blue">blue</a>#}
+{#                                        <a href="shop.html" class="cholate">cholate</a>#}
+{#                                        <a href="shop.html" class="copper">copper</a>#}
+{#                                        <a href="shop.html" class="gray">grey</a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="shop-widget mb--40">#}
+{#                                    <h3 class="widget-title mb--25">Price</h3>#}
+{#                                    <ul class="widget-list price-list">#}
+{#                                        <li>#}
+{#                                            <a href="shop.html">#}
+{#                                                <span>Low - Medium</span>#}
+{#                                                <strong class="font-weight-medium">$10.00 - $45.00</strong>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="shop.html">#}
+{#                                                <span>Medium - High</span>#}
+{#                                                <strong class="font-weight-medium">$45.00 - $60.00</strong>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="shop.html">#}
+{#                                                <span>High - Avobe</span>#}
+{#                                                <strong class="font-weight-medium">$60.00 - $200</strong>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                                <div class="shop-widget mb--40">#}
+{#                                    <h3 class="widget-title mb--25">Brand</h3>#}
+{#                                    <ul class="widget-list brand-list">#}
+{#                                        <li>#}
+{#                                            <a href="shop.html">#}
+{#                                                <span>Walmart</span>#}
+{#                                                <strong class="color--red font-weight-medium">10</strong>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="shop.html">#}
+{#                                                <span>Yellow</span>#}
+{#                                                <strong class="color--red font-weight-medium">50</strong>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="shop.html">#}
+{#                                                <span>H &amp; M</span>#}
+{#                                                <strong class="color--red font-weight-medium">46</strong>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="shop.html">#}
+{#                                                <span>Black &amp; White</span>#}
+{#                                                <strong class="color--red font-weight-medium">46</strong>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                                <div class="shop-widget">#}
+{#                                    <h3 class="widget-title mb--25">Tag</h3>#}
+{#                                    <div class="tagcloud">#}
+{#                                        <a href="shop.html">Cloth</a>#}
+{#                                        <a href="shop.html">Blazer</a>#}
+{#                                        <a href="shop.html">Jacket</a>#}
+{#                                        <a href="shop.html">Polo Shirt</a>#}
+{#                                        <a href="shop.html">T-Shirt</a>#}
+{#                                        <a href="shop.html">Shoes</a>#}
+{#                                        <a href="shop.html">Pant</a>#}
+{#                                        <a href="shop.html">Party Dress</a>#}
+{#                                        <a href="shop.html">Coktail Dress</a>#}
+{#                                        <a href="shop.html">Sweater</a>#}
+{#                                        <a href="shop.html">Jeans</a>#}
+{#                                    </div>#}
+{#                                </div>#}
                             </aside>
                         </div>
                     </div>
