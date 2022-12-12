@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'Breadcrumb.html' %}
+    {% include 'Breadcrumb.html' with title='Product detail' %}
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">
         <div class="page-content-inner pt--80 pt-md--60">
@@ -154,17 +154,29 @@
                             </div>
                             <div
                                     class="product-action d-flex flex-sm-row align-items-sm-center flex-column align-items-start mb--30">
-                                <div class="quantity-wrapper d-flex align-items-center mr--30 mr-xs--0 mb-xs--30">
-                                    <label class="quantity-label" for="pro-qty">{% trans 'Quantity:' %}</label>
-                                    <div class="quantity">
-                                        <input type="number" class="quantity-input" name="pro-qty" id="pro-qty"
-                                               value="1" min="1">
+                                <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="quantity-wrapper d-flex align-items-center mr--30 mr-xs--0 mb-xs--30">
+                                        <div class="quantity">
+                                            <input type="number" class="quantity-input" name="quantity" id="pro-qty"
+                                                   value="1" min="1" max="30">
+                                        </div>
                                     </div>
-                                </div>
-                                <button type="button" class="btn btn-shape-square btn-size-sm"
-                                        onclick="window.location.href='cart.html'">
-                                    {% trans 'Add To Cart' %}
-                                </button>
+                                    <button type="submit" class="btn btn-shape-square btn-size-sm mt-2">
+                                        {% trans 'Add To Cart' %}
+                                    </button>
+                                </form>
+                                {#                                <div class="quantity-wrapper d-flex align-items-center mr--30 mr-xs--0 mb-xs--30">#}
+                                {#                                    <label class="quantity-label" for="pro-qty">{% trans 'Quantity:' %}</label>#}
+                                {#                                    <div class="quantity">#}
+                                {#                                        <input type="number" class="quantity-input" name="pro-qty" id="pro-qty"#}
+                                {#                                               value="1" min="1">#}
+                                {#                                    </div>#}
+                                {#                                </div>#}
+                                {#                                <button type="button" class="btn btn-shape-square btn-size-sm"#}
+                                {#                                        onclick="window.location.href='cart.html'">#}
+                                {#                                    {% trans 'Add To Cart' %}#}
+                                {#                                </button>#}
                             </div>
                             <div class="product-footer-meta">
                                 <p><span>{% trans 'Category:' %}</span>
@@ -264,7 +276,8 @@
                                                                 </div>
                                                                 <div class="product-rating">
                                                                     <div class="star-rating star-{{ comment.stars|number_to_word }}">
-                                                                        <span>Rated <strong class="rating">{{ comment.stars|int_to_float }}</strong>
+                                                                        <span>Rated <strong
+                                                                                class="rating">{{ comment.stars|int_to_float }}</strong>
                                                                             out of 5</span>
                                                                     </div>
                                                                 </div>
@@ -280,18 +293,27 @@
                                             <div class="row">
                                                 <div class="col-lg-8">
                                                     <h1>{% trans 'Add a review' %}</h1>
-                                                    <form action="{% url 'comment_create' product.id %}" class="form pr--30" method="post">
-                                                        {% csrf_token %}
-                                                        {{ comment_form|crispy }}
-                                                        <div class="form__group mt-2">
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <input type="submit" value="{% trans 'Submit' %}"
-                                                                           class="btn btn-size-md">
+                                                    {% if user.is_authenticated %}
+                                                        <form action="{% url 'comment_create' product.id %}"
+                                                              class="form pr--30" method="post">
+                                                            {% csrf_token %}
+                                                            {{ comment_form|crispy }}
+                                                            <div class="form__group mt-2">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <input type="submit"
+                                                                               value="{% trans 'Submit' %}"
+                                                                               class="btn btn-size-md">
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </form>
+                                                        </form>
+                                                    {% else %}
+                                                        <p>{% trans 'In order to submit a review please ' %} <a
+                                                                class="text-decoration-underline"
+                                                                href="{% url 'account_login' %}"><strong>{% trans 'Login' %}</strong></a>
+                                                        </p>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -538,66 +560,7 @@
             </div>
         </div>
 
-        <!-- Mini Cart Start -->
-        <aside class="mini-cart" id="miniCart">
-            <div class="mini-cart-wrapper">
-                <div class="mini-cart__close">
-                    <a href="#" class="btn-close"></a>
-                </div>
-                <div class="mini-cart-inner">
-                    <h3 class="mini-cart__heading mb--45">Shopping Cart</h3>
-                    <div class="mini-cart__content">
-                        <ul class="mini-cart__list">
-                            <li class="mini-cart__product">
-                                <a href="#" class="mini-cart__product-remove">
-                                    <i class="flaticon-cross"></i>
-                                </a>
-                                <div class="mini-cart__product-image">
-                                    <img src="assets/img/products/product-11-90x90.jpg" alt="products">
-                                </div>
-                                <div class="mini-cart__product-content">
-                                    <a class="mini-cart__product-title" href="product-details.html">Lexbaro Begadi</a>
-                                    <span class="mini-cart__product-quantity">1 x $49.00</span>
-                                </div>
-                            </li>
-                            <li class="mini-cart__product">
-                                <a href="#" class="mini-cart__product-remove">
-                                    <i class="flaticon-cross"></i>
-                                </a>
-                                <div class="mini-cart__product-image">
-                                    <img src="assets/img/products/product-12-90x90.jpg" alt="products">
-                                </div>
-                                <div class="mini-cart__product-content">
-                                    <a class="mini-cart__product-title" href="product-details.html">Lexbaro Begadi</a>
-                                    <span class="mini-cart__product-quantity">1 x $49.00</span>
-                                </div>
-                            </li>
-                            <li class="mini-cart__product">
-                                <a href="#" class="mini-cart__product-remove">
-                                    <i class="flaticon-cross"></i>
-                                </a>
-                                <div class="mini-cart__product-image">
-                                    <img src="assets/img/products/product-13-90x90.jpg" alt="products">
-                                </div>
-                                <div class="mini-cart__product-content">
-                                    <a class="mini-cart__product-title" href="product-details.html">Lexbaro Begadi</a>
-                                    <span class="mini-cart__product-quantity">1 x $49.00</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="mini-cart__total">
-                            <span>Subtotal</span>
-                            <span class="ammount">$98.00</span>
-                        </div>
-                        <div class="mini-cart__buttons">
-                            <a href="cart.html" class="btn btn-fullwidth btn-bg-primary mb--20">View Cart</a>
-                            <a href="checkout.html" class="btn btn-fullwidth btn-bg-primary">Checkout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-        <!-- Mini Cart End -->
+{% include 'cart/cart_sidebar.html' %}
 
     </div>
     <!-- Main Content Wrapper End -->
