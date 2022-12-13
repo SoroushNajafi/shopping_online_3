@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'rosetta',
     'jalali_date',
+    'ckeditor',
 
     #local apps
     'accounts',
