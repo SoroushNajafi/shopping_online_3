@@ -3,6 +3,9 @@
 {% load crispy_forms_tags %}
 {% load comment_tag %}
 {% load i18n %}
+{% load jalali_tags %}
+{% load persian_translation_number_tag %}
+{% load humanize %}
 
 {% block page_title %}
     {% trans 'Product detail' %}
@@ -152,7 +155,7 @@
                             <h3 class="product-title mb--20">{{ product.title }}</h3>
                             <p class="product-short-description mb--20">{{ product.description|truncatewords:5 }}</p>
                             <div class="product-price-wrapper mb--25">
-                                <span class="money">{% trans '$' %}{{ product.price }}</span>
+                                <span class="money">{% trans '$' %}{{ product.price|translate_number|intcomma }}</span>
                             </div>
                             <div
                                     class="product-action d-flex flex-sm-row align-items-sm-center flex-column align-items-start mb--30">
@@ -269,7 +272,7 @@
                                                                 <div class="review__meta">
                                                                     <strong class="review__author">{{ comment.author }}</strong>
                                                                     <span class="review__dash">-</span>
-                                                                    <span class="review__published-date">{{ comment.datetime_created }}</span>
+                                                                    <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y/%B/%d _ %H:%M:%S'|translate_number }}</span>
                                                                 </div>
                                                                 <div class="product-rating">
                                                                     <div class="star-rating star-{{ comment.stars|number_to_word }}">

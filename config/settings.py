@@ -43,12 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     #thirdparty apps
     'crispy_forms',
     'allauth',
     'allauth.account',
     'rosetta',
+    'jalali_date',
 
     #local apps
     'accounts',
