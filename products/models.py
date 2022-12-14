@@ -15,7 +15,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='product/product_img/', blank=True)
     dimension = models.CharField(blank=True, max_length=60)
     weight = models.PositiveIntegerField(null=True)
-    characteristic = RichTextField()
+    characteristic = RichTextField(null=True)
 
     datetime_created = models.DateTimeField(default=timezone.now)
     datetime_modified = models.DateTimeField(auto_now=True)
