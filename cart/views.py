@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.decorators.http import require_POST
+from django.contrib import messages
+from django.utils.translation import gettext as _
 
 from .cart import Cart
 from products.models import Product
@@ -29,7 +31,8 @@ def add_to_cart_view(request, product_id):
         quantity = cleaned_data['quantity']
         cart.add(product, quantity, replace_current_quantity=cleaned_data['inplace'])
 
-    return redirect('cart:cart_detail')
+    return redirect(request.META.get('HTTP_REFERER') or 'cart:cart_detail')# inja bad az ezafe be sabad dge redirect
+    # nemishe be cart balke be hamun safheyi redirect mishe ke azash request.post ro gerefte
 
 
 def remove_from_cart(request, product_id):
@@ -44,7 +47,11 @@ def remove_from_cart(request, product_id):
 
 def clear_cart(request):
     cart = Cart(request)
-    cart.clear()
+
+    if len(cart): # in be hamun manie len(cart) != 0
+        cart.clear()
+    else:
+        messages.warning(request, _('you cart is already empty'))
 
     return redirect('cart:cart_detail')
 

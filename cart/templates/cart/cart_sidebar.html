@@ -19,7 +19,10 @@
                                 <i class="flaticon-cross"></i>
                             </a>
                             <div class="mini-cart__product-image">
-                                <img src="{% static 'img/products/product-11-90x90.jpg' %}">
+                                {% if item.product_obj.image %}
+
+                                <img src="{{ item.product_obj.image.url }}">
+                                {% endif %}
                             </div>
                             <div class="mini-cart__product-content">
                                 <a class="mini-cart__product-title"
@@ -38,7 +41,9 @@
                 <div class="mini-cart__buttons">
                     <a href="{% url 'cart:cart_detail' %}"
                        class="btn btn-fullwidth btn-bg-primary mb--20">{% trans 'View Cart' %}</a>
+                    {% if cart %}
                     <a href="{% url 'order_create' %}" class="btn btn-fullwidth btn-bg-primary">{% trans 'Checkout' %}</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -41,7 +41,9 @@
                                                             href="{% url 'cart:remove_from_cart' item.product_obj.id %}"><i
                                                             class="flaticon-cross"></i></a></td>
                                                     <td class="product-thumbnail text-start">
-                                                        <img src="{% static 'img/products/product-11-70x88.jpg' %}">
+                                                        {% if item.product_obj.image %}
+                                                        <img src="{{ item.product_obj.image.url }}">
+                                                        {% endif %}
                                                     </td>
                                                     <td class="product-name text-start wide-column">
                                                         <h3>
@@ -95,14 +97,12 @@
                                 </div>
                             </div>
                             {% if cart %}
-
                             <div class="col-sm-6 text-sm-end">
                                 <a href="{% url 'cart:clear_cart' %}">
                                     <button type="submit" class="cart-form__btn">{% trans 'Clear Cart' %}</button>
                                 </a>
                                 {#                                    <button type="submit" class="cart-form__btn">Update Cart</button>#}
                             </div>
-
                             {% endif %}
                         </div>
                     </div>
@@ -249,8 +249,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="checkout.html" class="btn btn-size-md btn-shape-square btn-fullwidth">
-                                Proceed To Checkout
+                            <a href="{% url 'order_create' %}" class="btn btn-size-md btn-shape-square btn-fullwidth">
+                                {% trans 'Proceed To Checkout' %}
                             </a>
                         </div>
                     </div>
