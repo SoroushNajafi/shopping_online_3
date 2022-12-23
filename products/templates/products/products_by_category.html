@@ -1,0 +1,204 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}
+    {% trans 'Products by Category' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+
+
+        {% include 'Breadcrumb.html' with title=category.get_name %}
+        <!-- Main Content Wrapper Start -->
+        <div class="main-content-wrapper">
+            <div class="shop-page-wrapper ptb--80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-8 order-lg-2 mb-md--50">
+                            <div class="shop-toolbar mb--50">
+                                <div class="row align-items-center">
+                                    <div class="col-md-5 mb-sm--30 mb-xs--10">
+                                        <div class="shop-toolbar__left">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="shop-toolbar__right">
+                                            <p class="product-pages">Showing Result 08 Among 72</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-products">
+                                <div class="row">
+
+                                    {% for product in products %}
+                                        <div class="col-xl-4 col-sm-6 mb--50">
+                                            <div class="payne-product">
+                                                <div class="product__inner">
+                                                    <div class="product__image">
+                                                        <figure class="product__image--holder">
+                                                            {% if product.image %}
+                                                                <img src="{{ product.image.url }}">
+                                                            {% endif %}
+                                                        </figure>
+                                                        <a href="{{ product.get_absolute_url }}"
+                                                           class="product__overlay"></a>
+                                                    </div>
+                                                    <div class="product__info">
+                                                        <div class="product__info--left">
+                                                            <h3 class="product__title">
+                                                                <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                                            </h3>
+                                                            <div class="product__price">
+                                                                <span class="money">{{ product.price }}</span>
+                                                                <span class="sign">$</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product__info--right">
+                                                        <span class="product__rating">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            <nav class="pagination-wrap">
+                                <ul class="pagination">
+                                    <li><span class="page-number current">1</span></li>
+                                    <li><a href="#" class="page-number">2</a></li>
+                                    <li><span class="dot"></span></li>
+                                    <li><span class="dot"></span></li>
+                                    <li><span class="dot"></span></li>
+                                    <li><a href="#" class="page-number">16</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 order-lg-1">
+                            <aside class="shop-sidebar">
+                                <div class="shop-widget mb--40">
+                                    <h3 class="widget-title mb--25">{% trans 'Category' %}</h3>
+                                    <ul class="widget-list category-list">
+                                        {% for category in categories %}
+                                        <li>
+                                            <a href="{{ category.get_absolute_url }}">
+                                                <span class="category-title">{{ category.get_name }}</span>
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                {#                                <div class="shop-widget mb--40">#}
+                                {#                                    <h3 class="widget-title mb--30">Color</h3>#}
+                                {#                                    <div class="widget-color">#}
+                                {#                                        <a href="shop.html" class="red">Red</a>#}
+                                {#                                        <a href="shop.html" class="pink">Pink</a>#}
+                                {#                                        <a href="shop.html" class="black">black</a>#}
+                                {#                                        <a href="shop.html" class="brown">brown</a>#}
+                                {#                                        <a href="shop.html" class="blue">blue</a>#}
+                                {#                                        <a href="shop.html" class="cholate">cholate</a>#}
+                                {#                                        <a href="shop.html" class="copper">copper</a>#}
+                                {#                                        <a href="shop.html" class="gray">grey</a>#}
+                                {#                                    </div>#}
+                                {#                                </div>#}
+                                {#                                <div class="shop-widget mb--40">#}
+                                {#                                    <h3 class="widget-title mb--25">Price</h3>#}
+                                {#                                    <ul class="widget-list price-list">#}
+                                {#                                        <li>#}
+                                {#                                            <a href="shop.html">#}
+                                {#                                                <span>Low - Medium</span>#}
+                                {#                                                <strong class="font-weight-medium">$10.00 - $45.00</strong>#}
+                                {#                                            </a>#}
+                                {#                                        </li>#}
+                                {#                                        <li>#}
+                                {#                                            <a href="shop.html">#}
+                                {#                                                <span>Medium - High</span>#}
+                                {#                                                <strong class="font-weight-medium">$45.00 - $60.00</strong>#}
+                                {#                                            </a>#}
+                                {#                                        </li>#}
+                                {#                                        <li>#}
+                                {#                                            <a href="shop.html">#}
+                                {#                                                <span>High - Avobe</span>#}
+                                {#                                                <strong class="font-weight-medium">$60.00 - $200</strong>#}
+                                {#                                            </a>#}
+                                {#                                        </li>#}
+                                {#                                    </ul>#}
+                                {#                                </div>#}
+                                {#                                <div class="shop-widget mb--40">#}
+                                {#                                    <h3 class="widget-title mb--25">Brand</h3>#}
+                                {#                                    <ul class="widget-list brand-list">#}
+                                {#                                        <li>#}
+                                {#                                            <a href="shop.html">#}
+                                {#                                                <span>Walmart</span>#}
+                                {#                                                <strong class="color--red font-weight-medium">10</strong>#}
+                                {#                                            </a>#}
+                                {#                                        </li>#}
+                                {#                                        <li>#}
+                                {#                                            <a href="shop.html">#}
+                                {#                                                <span>Yellow</span>#}
+                                {#                                                <strong class="color--red font-weight-medium">50</strong>#}
+                                {#                                            </a>#}
+                                {#                                        </li>#}
+                                {#                                        <li>#}
+                                {#                                            <a href="shop.html">#}
+                                {#                                                <span>H &amp; M</span>#}
+                                {#                                                <strong class="color--red font-weight-medium">46</strong>#}
+                                {#                                            </a>#}
+                                {#                                        </li>#}
+                                {#                                        <li>#}
+                                {#                                            <a href="shop.html">#}
+                                {#                                                <span>Black &amp; White</span>#}
+                                {#                                                <strong class="color--red font-weight-medium">46</strong>#}
+                                {#                                            </a>#}
+                                {#                                        </li>#}
+                                {#                                    </ul>#}
+                                {#                                </div>#}
+                                {#                                <div class="shop-widget">#}
+                                {#                                    <h3 class="widget-title mb--25">Tag</h3>#}
+                                {#                                    <div class="tagcloud">#}
+                                {#                                        <a href="shop.html">Cloth</a>#}
+                                {#                                        <a href="shop.html">Blazer</a>#}
+                                {#                                        <a href="shop.html">Jacket</a>#}
+                                {#                                        <a href="shop.html">Polo Shirt</a>#}
+                                {#                                        <a href="shop.html">T-Shirt</a>#}
+                                {#                                        <a href="shop.html">Shoes</a>#}
+                                {#                                        <a href="shop.html">Pant</a>#}
+                                {#                                        <a href="shop.html">Party Dress</a>#}
+                                {#                                        <a href="shop.html">Coktail Dress</a>#}
+                                {#                                        <a href="shop.html">Sweater</a>#}
+                                {#                                        <a href="shop.html">Jeans</a>#}
+                                {#                                    </div>#}
+                                {#                                </div>#}
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Wrapper Start -->
+
+
+        {% include 'cart/cart_sidebar.html' %}
+
+        <!-- Global Overlay Start -->
+        <div class="global-overlay"></div>
+        <!-- Global Overlay End -->
+
+        <!-- Scroll To Top Start -->
+        <a class="scroll-to-top" href=""><i class="fa fa-angle-double-up"></i></a>
+        <!-- Scroll To Top End -->
+    </div>
+    <!-- Main Wrapper End -->
+{% endblock %}

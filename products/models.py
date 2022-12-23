@@ -3,11 +3,35 @@ from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
+from django.utils.translation import get_language
 
 from ckeditor.fields import RichTextField
 
 
+class Category(models.Model):
+    en_title = models.CharField(max_length=100)
+    fa_title = models.CharField(max_length=100, null=True)
+    image = models.ImageField(upload_to='category/category_image', null=True)
+
+    datetime_created = models.DateTimeField(default=timezone.now)
+    datetime_modified = models.DateTimeField(auto_now=True)
+
+    def get_name(self):
+        curr_lang = get_language()
+        if curr_lang == 'fa':
+            return self.fa_title
+        else:
+            return self.en_title
+
+    def __str__(self):
+        return self.en_title
+
+    def get_absolute_url(self):
+        return reverse('products_by_category', args=[self.id])
+
+
 class Product(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products', null=True)
     title = models.CharField(max_length=100)
     description = RichTextField()
     price = models.DecimalField(max_digits=5, decimal_places=2)

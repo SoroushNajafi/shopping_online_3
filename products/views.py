@@ -3,8 +3,27 @@ from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 
-from .models import Product, Comment
+from .models import Product, Comment, Category
 from .forms import CommentForm
+
+
+class ProductsByCategoryListView(generic.ListView):
+    model = Category
+    template_name = 'products/products_By_category.html'
+
+    def get_queryset(self):
+        category_id = int(self.kwargs['category_id'])
+        category = get_object_or_404(Category, id=category_id)
+        return category.products.all()
+
+    context_object_name = 'products'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category_id = int(self.kwargs['category_id'])
+        category = get_object_or_404(Category, id=category_id)
+        context['category'] = category
+        return context
 
 
 class ProductListView(generic.ListView):
