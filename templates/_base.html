@@ -64,9 +64,9 @@
                                         <ul class="sub-menu">
                                             {% for category in categories %}
 
-                                            <li>
-                                                <a href="{{ category.get_absolute_url }}">{{ category.get_name }}</a>
-                                            </li>
+                                                <li>
+                                                    <a href="{{ category.get_absolute_url }}">{{ category.get_name }}</a>
+                                                </li>
                                             {% endfor %}
                                         </ul>
                                     </div>
@@ -124,15 +124,22 @@
                     <div class="header__col header__right">
                         {% if user.is_authenticated %}
                             <div class="toolbar-item d-none d-lg-block">
-                                <span><a href="profile.html"><i class="fa fa-user-circle"></i></a> {% trans 'Welcome ' %}</span><strong>{{ user.username|capfirst }}</strong> |
-                                <a href="{% url 'account_logout' %}" class="toolbar-btn">
-                                    <span>{% trans 'Logout' %}</span>
-                                </a>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        {% trans 'Welcome ' %}{{ user.username }}
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="profile.html">{% trans 'Profile' %}</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'account_change_password' %}">{% trans 'Change Password' %}</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         {% else %}
                             <div class="toolbar-item d-none d-lg-block">
-                            <a href="{% url 'account_login' %}" class="toolbar-btn">{% trans 'Login' %}</a> |
-                            <a href="{% url 'account_signup' %}" class="toolbar-btn">{% trans 'Signup' %}</a>
+                                <a href="{% url 'account_login' %}" class="toolbar-btn">{% trans 'Login' %}</a> |
+                                <a href="{% url 'account_signup' %}" class="toolbar-btn">{% trans 'Signup' %}</a>
                             </div>
                         {% endif %}
                         <div class="toolbar-item d-block d-lg-none">
@@ -145,12 +152,12 @@
                                 <span></span>
                             </a>
                         </div>
-{#                        <div class="toolbar-item">#}
-{#                            <a href="wishlist.html" class="toolbar-btn">#}
-{#                                <i class="flaticon-heart"></i>#}
-{#                            </a>#}
-{#                        </div>#}
-                        <div class="toolbar-item mini-cart-btn">
+                        {#                        <div class="toolbar-item">#}
+                        {#                            <a href="wishlist.html" class="toolbar-btn">#}
+                        {#                                <i class="flaticon-heart"></i>#}
+                        {#                            </a>#}
+                        {#                        </div>#}
+                        <div class="toolbar-item mini-cart-btn mt-3">
                             <a href="#miniCart" class="toolbar-btn js-toolbar">
                                         <span class="mini-cart-btn__icon">
                                             <i class="flaticon-bag"></i>
