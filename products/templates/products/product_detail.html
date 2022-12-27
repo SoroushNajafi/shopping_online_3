@@ -281,6 +281,10 @@
                                                                 </div>
                                                             </div>
                                                             <p class="review__description">{{ comment.body }}</p>
+                                                            {% if user == comment.author %}
+                                                             <button class="badge"><a style="color: #0b0b0b" href="{% url 'comment_update' comment.id %}">{% trans 'Edit' %}</a>
+                                                                            </button>
+                                                            {% endif %}
                                                         </div>
                                                     </div>
                                                 </li>

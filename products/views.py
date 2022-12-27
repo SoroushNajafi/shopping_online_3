@@ -2,6 +2,7 @@ from django.views import generic
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 from .models import Product, Comment, Category
 from .forms import CommentForm
@@ -58,5 +59,13 @@ class CommentCreateView(generic.CreateView):
         return super().form_valid(form)
 
 
+class CommentUpdateView(UserPassesTestMixin, generic.UpdateView):
+    model = Comment
+    template_name = 'products/comment_update.html'
+    fields = ['body', 'stars']
+    pk_url_kwarg = 'comment_id'
 
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
