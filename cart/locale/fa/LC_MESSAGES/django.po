@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-27 12:33+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\cart\cart.py:34
+msgid "cart updated successfully"
+msgstr "سبد خرید با موفقیت به روز شد"
+
+#: .\cart\cart.py:38
+msgid "Product added successfully"
+msgstr "محصول با موفقیت اضافه شد"
+
+#: .\cart\cart.py:50
+msgid "product removed successfully"
+msgstr "محصول با موفقیت حذف شد"
+
+#: .\cart\cart.py:86
+msgid "cart cleared successfully"
+msgstr "سبد خرید با موفقیت خالی شد"
+
+#: .\cart\templates\cart\cart_detail.html:10
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: .\cart\templates\cart\cart_detail.html:30
+msgid "Product"
+msgstr "محصول"
+
+#: .\cart\templates\cart\cart_detail.html:31
+msgid "price"
+msgstr "قیمت"
+
+#: .\cart\templates\cart\cart_detail.html:32
+msgid "quantity"
+msgstr "تعداد"
+
+#: .\cart\templates\cart\cart_detail.html:33
+msgid "total"
+msgstr "جمع"
+
+#: .\cart\templates\cart\cart_detail.html:85
+msgid "There is no product in your cart, "
+msgstr "هیچ محصولی در سبد خرید شما وجود ندارد،"
+
+#: .\cart\templates\cart\cart_detail.html:86
+msgid "Go Shopping"
+msgstr "به خرید بروید"
+
+#: .\cart\templates\cart\cart_detail.html:102
+msgid "Clear Cart"
+msgstr "خالی کردن سبد خرید"
+
+#: .\cart\templates\cart\cart_detail.html:112
+msgid "Cart totals"
+msgstr "مجموع سبد خرید"
+
+#: .\cart\templates\cart\cart_detail.html:116
+msgid "Subtotal"
+msgstr "جمع فرعی"
+
+#: .\cart\templates\cart\cart_detail.html:124
+msgid "Shipping"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:127
+msgid "Free Shipping"
+msgstr "حمل"
+
+#: .\cart\templates\cart\cart_detail.html:246
+#: .\cart\templates\cart\cart_sidebar.html:31
+#: .\cart\templates\cart\cart_sidebar.html:39
+msgid "$"
+msgstr "دلار"
+
+#: .\cart\templates\cart\cart_detail.html:253
+msgid "Proceed To Checkout"
+msgstr "به پرداخت ادامه دهید"
+
+#: .\cart\templates\cart\cart_sidebar.html:13
+msgid "Shopping Cart"
+msgstr "سبد خرید"
+
+#: .\cart\templates\cart\cart_sidebar.html:38
+msgid "Total"
+msgstr "مجموع"
+
+#: .\cart\templates\cart\cart_sidebar.html:43
+msgid "View Cart"
+msgstr "مشاهده سبد خرید"
+
+#: .\cart\templates\cart\cart_sidebar.html:45
+msgid "Checkout"
+msgstr "پرداخت"
+
+#: .\cart\views.py:54
+msgid "you cart is already empty"
+msgstr "سبد شما در حال حاضر خالی است"

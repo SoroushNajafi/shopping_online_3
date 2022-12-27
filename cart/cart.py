@@ -1,5 +1,6 @@
 from products.models import Product
 from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 
 class Cart:
@@ -30,11 +31,11 @@ class Cart:
 
         if replace_current_quantity:
             self.cart[product_id]['quantity'] = quantity
-            messages.success(self.request, 'cart updated successfully')
+            messages.success(self.request, _('cart updated successfully'))
 
         else:
             self.cart[product_id]['quantity'] += quantity
-            messages.success(self.request, 'Product added successfully')
+            messages.success(self.request, _('Product added successfully'))
 
         self.save()
 
@@ -46,7 +47,7 @@ class Cart:
 
         if product_id in self.cart:
             del self.cart[product_id]
-            messages.success(self.request, 'product removed successfully')
+            messages.success(self.request, _('product removed successfully'))
             self.save()
 
     def save(self):
@@ -82,7 +83,7 @@ class Cart:
         for clearing the cart totally
         """
         del self.session['cart']
-        messages.success(self.request, 'cart cleared successfully')
+        messages.success(self.request, _('cart cleared successfully'))
         self.save()
 
     def get_total_price(self):

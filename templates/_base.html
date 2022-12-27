@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load path_modifier %}
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
@@ -131,8 +132,11 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="profile.html">{% trans 'Profile' %}</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'account_change_password' %}">{% trans 'Change Password' %}</a></li>
-                                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></li>
+                                        <li><a class="dropdown-item"
+                                               href="{% url 'account_change_password' %}">{% trans 'Change Password' %}</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                               href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -167,6 +171,23 @@
                                 </sup>
                             </a>
                         </div>
+                        <div class="btn-group">
+                            <button style="color: black" type="button" class="badge" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                {% trans 'Select Language' %}
+                            </button>
+                            <ul class="dropdown-menu">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+
+                                    <li><a class="dropdown-item"
+                                           href="/{{ language.code }}{{ request.path|path_modifier }}">{{ language.name_local }}</a></li>
+
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -191,7 +212,7 @@
 
 {% endblock %}
 
-{% include 'foote.html' %}
+{% include 'footer.html' %}
 
 <!-- jQuery JS -->
 <script src="{% static 'js/vendor.js' %}"></script>

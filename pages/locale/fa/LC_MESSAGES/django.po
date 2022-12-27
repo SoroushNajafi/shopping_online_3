@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-27 12:33+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\pages\templates\pages\contact_us.html:6
+msgid "Contact Us Page"
+msgstr "صفحه تماس با ما"
+
+#: .\pages\templates\pages\contact_us.html:55
+msgid "Contact Us"
+msgstr "تماس با ما"
+
+#: .\pages\templates\pages\contact_us.html:66
+msgid "Name*"
+msgstr "نام*"
+
+#: .\pages\templates\pages\contact_us.html:68
+msgid "Email*"
+msgstr "پست الکترونیک*"
+
+#: .\pages\templates\pages\contact_us.html:70
+msgid "Message"
+msgstr "پیام"
+
+#: .\pages\templates\pages\contact_us.html:73
+msgid "Send"
+msgstr "ارسال"
+
+#: .\pages\templates\pages\home.html:6
+msgid "Home Page"
+msgstr "صفحه نخست"
+
+#: .\pages\templates\pages\home.html:27
+msgid "AMAZING PRODUCT!"
+msgstr "محصول شگفت انگیز!"
+
+#: .\pages\templates\pages\home.html:29
+#, fuzzy
+#| msgid "Furnitures"
+msgid "Furniture"
+msgstr "مبلمان"
+
+#: .\pages\templates\pages\home.html:35
+msgid "Shop Now"
+msgstr "اکنون خرید کنید"
+
+#: .\pages\templates\pages\home.html:134
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: .\pages\templates\pages\home.html:135
+msgid "Search in categories as you explore..."
+msgstr "همانطور که کاوش می کنید در دسته بندی ها جستجو کنید..."
+
+#: .\pages\templates\pages\home.html:367
+msgid "Methods"
+msgstr "روش ها"
+
+#: .\pages\templates\pages\home.html:374
+msgid "Free Home Delivery"
+msgstr "ارسال رایگان درب منزل"
+
+#: .\pages\templates\pages\home.html:380
+msgid "MONEY BACK GUARANTEE"
+msgstr "تضمین بازگشت پول"
+
+#: .\pages\templates\pages\home.html:386
+msgid "SUPPORT 24/7"
+msgstr "پشتیبانی 24/7"
+
+#: .\pages\views.py:23
+msgid "Thank you for contacting us"
+msgstr "از اینکه با ما تماس گرفتید، متشکریم"
+
+#: .\pages\views.py:24
+msgid ""
+"Hi {sent_name}, you contacted us with {sent_email}, we will reach back to "
+"you soon."
+msgstr ""
+"سلام {sent_name}, شما با ما تماس گرفتید با {sent_email}, با شما تماس خواهیم "
+"گرفت"
+
+#: .\pages\views.py:30
+msgid "your message has been sent successfully."
+msgstr "پیغام شما با موفقیت ارسال گردید."

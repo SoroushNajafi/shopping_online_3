@@ -23,36 +23,15 @@
                 <div class="footer-widget">
                     <h3 class="widget-title mb--35 mb-sm--15">Store Menu</h3>
                     <ul class="footer-menu">
+                        {% for category in categories %}
                         <li>
-                            <a href="shop.html">
+                            <a href="{{ category.get_absolute_url }}">
                                 <i class="fa fa-angle-right"></i>
-                                <span>Best Seller</span>
+                                <span>{{ category.get_name }}</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="shop.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>New Arrivals</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="shop.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Men</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="shop.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Women</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="shop.html">
-                                <i class="fa fa-angle-right"></i>
-                                <span>Accessories</span>
-                            </a>
-                        </li>
+                        {% endfor %}
+
                     </ul>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block page_title %}
-    Home Page
+    {% trans 'Home Page' %}
 {% endblock %}
 
 {% block content %}
@@ -24,15 +24,15 @@
                                         <div class="slider-content">
                                             <div class="slider-content__text mb--95 md-lg--80 mb-md--40 mb-sm--15">
                                                 <h3 class="text-uppercase font-weight-light" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">AMAZING PRODUCT!</h3>
+                                                    data-duration=".3s" data-delay=".3s">{% trans 'AMAZING PRODUCT!' %}</h3>
                                                 <h1 class="heading__primary mb--40 mb-md--20" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".3s">Furnitures</h1>
+                                                    data-duration=".3s" data-delay=".3s">{% trans 'Furniture' %}</h1>
                                                 <p class="font-weight-light" data-animation="fadeInUp"
                                                     data-duration=".3s" data-delay=".3s"></p>
                                             </div>
                                             <div class="slider-content__btn">
                                                 <a href="{% url 'products_list' %}" class="btn-link" data-animation="fadeInUp"
-                                                    data-duration=".3s" data-delay=".6s">Shop Now</a>
+                                                    data-duration=".3s" data-delay=".6s">{% trans 'Shop Now' %}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -364,26 +364,26 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="sr-only">Methods</h2>
+                            <h2 class="sr-only">{% trans 'Methods' %}</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 mb-sm--50">
                             <div class="method-box shipment-method">
                                 <i class="flaticon-truck"></i>
-                                <h3>Free Home Delivery</h3>
+                                <h3>{% trans 'Free Home Delivery' %}</h3>
                             </div>
                         </div>
                         <div class="col-md-4 mb-sm--50">
                             <div class="method-box money-back-method">
                                 <i class="flaticon-money"></i>
-                                <h3>MONEY BACK GUARANTEE</h3>
+                                <h3>{% trans 'MONEY BACK GUARANTEE' %}</h3>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="method-box support-method">
                                 <i class="flaticon-support"></i>
-                                <h3>SUPORT 24/7</h3>
+                                <h3>{% trans 'SUPPORT 24/7' %}</h3>
                             </div>
                         </div>
                     </div>

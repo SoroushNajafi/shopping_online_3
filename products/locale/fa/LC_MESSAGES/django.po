@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 12:25+0330\n"
+"POT-Creation-Date: 2022-12-27 12:33+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,114 +17,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\models.py:31
+#: .\products\models.py:62
 msgid "Very Bad"
 msgstr "خیلی بد"
 
-#: .\models.py:32
+#: .\products\models.py:63
 msgid "Bad"
 msgstr "بد"
 
-#: .\models.py:33
+#: .\products\models.py:64
 msgid "Normal"
 msgstr "معمولی"
 
-#: .\models.py:34
+#: .\products\models.py:65
 msgid "Good"
 msgstr "خوب"
 
-#: .\models.py:35
+#: .\products\models.py:66
 msgid "Perfect"
 msgstr "عالی"
 
-#: .\models.py:40
+#: .\products\models.py:71
 msgid "your review"
 msgstr "نظر شما"
 
-#: .\models.py:41
+#: .\products\models.py:72
 msgid "your score to this product"
 msgstr "امتیاز شما به این محصول"
 
-#: .\templates\products\product_detail.html:8
+#: .\products\templates\products\product_detail.html:11
 msgid "Product detail"
 msgstr "جزئیات محصول"
 
-#: .\templates\products\product_detail.html:158
-msgid "Quantity:"
-msgstr "تعداد:"
+#: .\products\templates\products\product_detail.html:158
+#: .\products\templates\products\product_detail.html:386
+#: .\products\templates\products\products_by_category.html:57
+#: .\products\templates\products\products_list.html:57
+msgid "$"
+msgstr "دلار"
 
-#: .\templates\products\product_detail.html:166
+#: .\products\templates\products\product_detail.html:171
 msgid "Add To Cart"
 msgstr "افزودن به سبد خرید"
 
-#: .\templates\products\product_detail.html:170
+#: .\products\templates\products\product_detail.html:187
 msgid "Category:"
 msgstr "دسته بندی:"
 
-#: .\templates\products\product_detail.html:187
+#: .\products\templates\products\product_detail.html:202
 msgid "Description"
 msgstr "توضیحات"
 
-#: .\templates\products\product_detail.html:192
+#: .\products\templates\products\product_detail.html:207
 msgid "Additional Information"
 msgstr "اطلاعات تکمیلی"
 
-#: .\templates\products\product_detail.html:197
+#: .\products\templates\products\product_detail.html:212
 msgid "Reviews"
 msgstr "نظرات"
 
-#: .\templates\products\product_detail.html:207
+#: .\products\templates\products\product_detail.html:222
 msgid "Characteristics :"
 msgstr "مشخصات:"
 
-#: .\templates\products\product_detail.html:225
+#: .\products\templates\products\product_detail.html:235
 msgid "Weight"
 msgstr "وزن"
 
-#: .\templates\products\product_detail.html:229
+#: .\products\templates\products\product_detail.html:239
 msgid "Dimensions"
 msgstr "ابعاد"
 
-#: .\templates\products\product_detail.html:249
+#: .\products\templates\products\product_detail.html:259
 msgid "review for"
 msgstr "نظر برای"
 
-#: .\templates\products\product_detail.html:282
+#: .\products\templates\products\product_detail.html:293
 msgid "Add a review"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:289
+#: .\products\templates\products\product_detail.html:303
 msgid "Submit"
 msgstr "ارسال"
 
-#: .\templates\products\product_detail.html:304
+#: .\products\templates\products\product_detail.html:310
+msgid "In order to submit a review please "
+msgstr "برای ارسال نظر لطفا"
+
+#: .\products\templates\products\product_detail.html:312
+msgid "Login"
+msgstr "وارد شوید"
+
+#: .\products\templates\products\product_detail.html:324
 msgid "Related Products"
 msgstr "محصولات مرتبط"
 
-#: .\templates\products\products_list.html:6
-msgid "Products list"
-msgstr "لیست محصولات"
+#: .\products\templates\products\products_by_category.html:6
+msgid "Products by Category"
+msgstr "محصولات بر اساس دسته"
 
-#: .\templates\products\products_list.html:89
+#: .\products\templates\products\products_by_category.html:91
+#: .\products\templates\products\products_list.html:91
 msgid "Category"
 msgstr "دسته بندی"
 
-#: .\templates\products\products_list.html:234
-msgid "Shopping Cart"
-msgstr "سبد خرید"
+#: .\products\templates\products\products_list.html:6
+msgid "Products list"
+msgstr "لیست محصولات"
 
-#: .\templates\products\products_list.html:275
-msgid "total"
-msgstr "جمع کل"
-
-#: .\templates\products\products_list.html:279
-msgid "View Cart"
-msgstr "مشاهده سبد خرید"
-
-#: .\templates\products\products_list.html:280
-msgid "Checkout"
-msgstr "پرداخت"
-
-#: .\views.py:38
+#: .\products\views.py:57
 msgid "Your comment added successfully"
 msgstr "نظر شما با موفقیت اضافه شد"
+
+#~ msgid "Quantity:"
+#~ msgstr "تعداد:"
+
+#~ msgid "Shopping Cart"
+#~ msgstr "سبد خرید"
+
+#~ msgid "total"
+#~ msgstr "جمع کل"
+
+#~ msgid "View Cart"
+#~ msgstr "مشاهده سبد خرید"
+
+#~ msgid "Checkout"
+#~ msgstr "پرداخت"

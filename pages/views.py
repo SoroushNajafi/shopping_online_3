@@ -21,7 +21,7 @@ def contact_us_view(request):
             sent_name = cleaned_data['name']
             sent_email = cleaned_data['email']
             send_mail(_('Thank you for contacting us'),
-                      _(f'Hi {sent_name}, you contacted us with this email {sent_email}, we will reach back to you soon.'),
+                      _(f'Hi {sent_name}, you contacted us with {sent_email}, we will reach back to you soon.'),
                       None,
                       [sent_email],
                       fail_silently=False)
