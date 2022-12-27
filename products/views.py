@@ -1,5 +1,6 @@
 from django.views import generic
 from django.shortcuts import get_object_or_404
+from django.urls import reverse_lazy
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.mixins import UserPassesTestMixin
@@ -68,4 +69,22 @@ class CommentUpdateView(UserPassesTestMixin, generic.UpdateView):
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
+
+
+class CommentDeleteView(UserPassesTestMixin, generic.DeleteView):
+    model = Comment
+    template_name = 'products/comment_delete.html'
+    pk_url_kwarg = 'comment_id'
+
+    def get_success_url(self):
+        comment_id = int(self.kwargs['comment_id'])
+        comment = get_object_or_404(Comment, id=comment_id)
+        product_id = comment.product.id
+        messages.success(self.request, _('comment deleted successfully.'))
+        return reverse_lazy('product_detail', args=[product_id])
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
 

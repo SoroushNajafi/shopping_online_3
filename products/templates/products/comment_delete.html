@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block page_title %}{% trans 'Comment Delete' %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <h1>{% trans 'Comment Delete' %}</h1>
+        <hr>
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1>{% trans 'Are you sure you want to delete this comment?' %}</h1>
+            <button type="submit" class="btn mt-1">{% trans 'Yes Delete' %}</button>
+        </form>
+        <hr>
+        <button class="btn"><a href="{{ comment.get_absolute_url }}">{% trans 'Never mind' %}</a></button>
+    </div>
+
+{% endblock %}
