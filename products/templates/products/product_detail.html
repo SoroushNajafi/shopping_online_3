@@ -33,35 +33,25 @@
                                             <div class="item">
                                                 {% if product.image %}
                                                 <figure class="product-gallery__image zoom">
-                                                    <img src="{{ product.image.url }}"
-                                                         alt="Product">
-                                                    <span class="product-badge sale">Sale</span>
+                                                    <img src="{{ product.image.url }}">
+{#                                                    <span class="product-badge sale">Sale</span>#}
                                                 </figure>
                                                 {% endif %}
                                             </div>
-                                            <div class="item">
-                                                <figure class="product-gallery__image zoom">
-                                                    <img src="{% static 'img/products/product-04-500x555.png' %}"
-                                                         alt="Product">
-                                                    <span class="product-badge sale">Sale</span>
-                                                </figure>
-                                            </div>
-                                            <div class="item">
-                                                <figure class="product-gallery__image zoom">
-                                                    <img src="{% static 'img/products/product-05-500x555.png' %}"
-                                                         alt="Product">
-                                                    <span class="product-badge sale">Sale</span>
+                                        {% if product.images %}
+                                            {% for image in product.images.all %}
 
-                                                </figure>
-                                            </div>
                                             <div class="item">
                                                 <figure class="product-gallery__image zoom">
-                                                    <img src="{% static 'img/products/product-06-500x555.png' %}"
-                                                         alt="Product">
-                                                    <span class="product-badge sale">Sale</span>
-
+                                                    <img src="{{ image.product_image.url }}">
+{#                                                    <span class="product-badge sale">Sale</span>#}
                                                 </figure>
                                             </div>
+                                            {% endfor %}
+
+
+                                        {% endif %}
+
                                         </div>
                                     </div>
                                 </div>
@@ -115,30 +105,26 @@
                                                 }
                                             }
                                         ]'>
+                                        {% if product.image %}
+
                                         <div class="item">
                                             <figure class="product-gallery__nav-image--single">
-                                                <img src="{% static 'img/products/product-03-270x300.jpg' %}"
-                                                     alt="Products">
+                                                <img src="{{ product.image.url }}">
                                             </figure>
                                         </div>
+                                        {% endif %}
+                                    {% if product.images %}
+                                        {% for image in product.images.all %}
+
                                         <div class="item">
                                             <figure class="product-gallery__nav-image--single">
-                                                <img src="{% static 'img/products/product-04-270x300.jpg' %}"
-                                                     alt="Products">
+                                                <img src="{{ image.product_image.url }}">
                                             </figure>
                                         </div>
-                                        <div class="item">
-                                            <figure class="product-gallery__nav-image--single">
-                                                <img src="{% static 'img/products/product-05-270x300.jpg' %}"
-                                                     alt="Products">
-                                            </figure>
-                                        </div>
-                                        <div class="item">
-                                            <figure class="product-gallery__nav-image--single">
-                                                <img src="{% static 'img/products/product-06-270x300.jpg' %}"
-                                                     alt="Products">
-                                            </figure>
-                                        </div>
+                                        {% endfor %}
+
+                                    {% endif %}
+
                                     </div>
                                 </div>
                             </div>

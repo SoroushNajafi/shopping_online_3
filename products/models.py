@@ -85,3 +85,11 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return reverse('product_detail', args=[self.product.id])
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
+    product_image = models.ImageField(upload_to='products/product_images', null=True)
+
+    def __str__(self):
+        return self.product.title

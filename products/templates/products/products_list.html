@@ -76,12 +76,15 @@
                             </div>
                             <nav class="pagination-wrap">
                                 <ul class="pagination">
-                                    <li><span class="page-number current">1</span></li>
-                                    <li><a href="#" class="page-number">2</a></li>
-                                    <li><span class="dot"></span></li>
-                                    <li><span class="dot"></span></li>
-                                    <li><span class="dot"></span></li>
-                                    <li><a href="#" class="page-number">16</a></li>
+                                    {% if page_obj.has_previous %}
+
+                                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-number">{% trans 'Pre' %}</a></li>
+                                    {% endif %}
+                                    <li><a href="" class="page-number">{{ page_obj.number }}</a></li>
+                                {% if page_obj.has_next %}
+
+                                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-number">{% trans 'Next' %}</a></li>
+                                {% endif %}
                                 </ul>
                             </nav>
                         </div>

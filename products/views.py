@@ -12,6 +12,7 @@ from .forms import CommentForm
 class ProductsByCategoryListView(generic.ListView):
     model = Category
     template_name = 'products/products_By_category.html'
+    paginate_by = 3
 
     def get_queryset(self):
         category_id = int(self.kwargs['category_id'])
@@ -33,6 +34,7 @@ class ProductListView(generic.ListView):
     template_name = 'products/products_list.html'
     queryset = Product.objects.filter(active=True)
     context_object_name = 'products'
+    paginate_by = 3
 
 
 class ProductDetailView(generic.DetailView):
