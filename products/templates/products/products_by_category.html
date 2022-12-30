@@ -80,7 +80,7 @@
 
                                     <li><a href="?page={{ page_obj.previous_page_number }}" class="page-number">{% trans 'Pre' %}</a></li>
                                     {% endif %}
-                                    <li><a href="" class="page-number">{{ page_obj.number }}</a></li>
+                                    <li><a href="?page={{ page_obj.number }}" class="page-number">{{ page_obj.number }}</a></li>
                                 {% if page_obj.has_next %}
 
                                     <li><a href="?page={{ page_obj.next_page_number }}" class="page-number">{% trans 'Next' %}</a></li>
