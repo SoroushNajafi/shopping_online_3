@@ -10,8 +10,8 @@
     <!-- Main Wrapper Start -->
     <div class="wrapper">
 
-
-{% include 'Breadcrumb.html' with title='Products' %}
+{% trans 'Products' as title %}
+{% include 'Breadcrumb.html' with title=title %}
 
         <!-- Main Content Wrapper Start -->
         <div  class="main-content-wrapper">

@@ -12,7 +12,8 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'Breadcrumb.html' with title='Product detail' %}
+    {% trans 'Product detail' as title %}
+    {% include 'Breadcrumb.html' with title=title %}
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">
         <div class="page-content-inner pt--80 pt-md--60">
