@@ -15,7 +15,7 @@
                 <ul class="mini-cart__list">
                     {% for item in cart %}
                         <li class="mini-cart__product">
-                            <a href="#" class="mini-cart__product-remove">
+                            <a href="{% url 'cart:remove_from_cart' item.product_obj.id %}" class="mini-cart__product-remove">
                                 <i class="flaticon-cross"></i>
                             </a>
                             <div class="mini-cart__product-image">

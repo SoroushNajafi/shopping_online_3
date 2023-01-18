@@ -119,6 +119,26 @@
                                 <li class="mainmenu__item">
                                     <a href="{% url 'contact_us' %}" class="mainmenu__link">{% trans 'Contact Us' %}</a>
                                 </li>
+                            <li class="mainmenu__item">
+                                    <a href="#miniCart" class="toolbar-btn js-toolbar">
+                                        <span class="mini-cart-btn__icon">
+                                            <i class="flaticon-bag"></i>
+                                        </span>
+                                <sup class="mini-cart-btn__count">
+                                    {{ cart|length }}
+                                </sup>
+                            </a>
+                                </li>
+{#                            <div class="toolbar-item mini-cart-btn mt-3">#}
+{#                            <a href="#miniCart" class="toolbar-btn js-toolbar">#}
+{#                                        <span class="mini-cart-btn__icon">#}
+{#                                            <i class="flaticon-bag"></i>#}
+{#                                        </span>#}
+{#                                <sup class="mini-cart-btn__count">#}
+{#                                    {{ cart|length }}#}
+{#                                </sup>#}
+{#                            </a>#}
+{#                        </div>#}
                             </ul>
                         </nav>
                     </div>
@@ -126,7 +146,7 @@
                         {% if user.is_authenticated %}
                             <div class="toolbar-item d-none d-lg-block">
                                 <div class="dropdown">
-                                    <button style="background-color: white; color: black" class="btn-shape-rounded mt-3" type="button"
+                                    <button style="background-color: white; color: black" class="btn-shape-rounded mt-2" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                         {% trans 'Welcome ' %}{{ user.username }} <i class="fa fa-angle-down"></i>
                                     </button>
@@ -161,16 +181,7 @@
                         {#                                <i class="flaticon-heart"></i>#}
                         {#                            </a>#}
                         {#                        </div>#}
-                        <div class="toolbar-item mini-cart-btn mt-3">
-                            <a href="#miniCart" class="toolbar-btn js-toolbar">
-                                        <span class="mini-cart-btn__icon">
-                                            <i class="flaticon-bag"></i>
-                                        </span>
-                                <sup class="mini-cart-btn__count">
-                                    {{ cart|length }}
-                                </sup>
-                            </a>
-                        </div>
+
                         <div class="btn-group">
 {#                            <button style="background-color:white;" class="btn-shape-rounded" data-bs-toggle="dropdown"#}
 {#                                    aria-expanded="false"><i class="fa fa-language" style="color:black;"></i>#}
@@ -180,9 +191,9 @@
                                 {% get_available_languages as LANGUAGES %}
                                 {% get_language_info_list for LANGUAGES as languages %}
                             {% if LANGUAGE_CODE == 'fa' %}
-                            <a href="/en{{ request.path|path_modifier }}"><button style="background-color: white" class="btn-shape-rounded mt-3">{% trans 'English' %}</button></a>
+                            <a href="/en{{ request.path|path_modifier }}"><button style="background-color: white" class="btn-shape-rounded mt-2">{% trans 'English' %}</button></a>
                                 {% else %}
-                                <a href="/fa{{ request.path|path_modifier }}"><button style="background-color: white" class="btn-shape-rounded mt-3">{% trans 'Farsi' %}</button></a>
+                                <a href="/fa{{ request.path|path_modifier }}"><button style="background-color: white" class="btn-shape-rounded mt-2">{% trans 'Farsi' %}</button></a>
                             {% endif %}
 {#                            <ul class="dropdown-menu">#}
 {#                                {% for language in languages %}#}
