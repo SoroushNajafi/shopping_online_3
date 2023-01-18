@@ -180,9 +180,9 @@
                                 {% get_available_languages as LANGUAGES %}
                                 {% get_language_info_list for LANGUAGES as languages %}
                             {% if LANGUAGE_CODE == 'fa' %}
-                            <button style="background-color: white" class="btn-shape-rounded"><a href="/en{{ request.path|path_modifier }}">{% trans 'English' %}</a></button>
+                            <a href="/en{{ request.path|path_modifier }}"><button style="background-color: white" class="btn-shape-rounded mt-3">{% trans 'English' %}</button></a>
                                 {% else %}
-                                <button style="background-color: white" class="btn-shape-rounded"><a href="/fa{{ request.path|path_modifier }}">{% trans 'Farsi' %}</a></button>
+                                <a href="/fa{{ request.path|path_modifier }}"><button style="background-color: white" class="btn-shape-rounded mt-3">{% trans 'Farsi' %}</button></a>
                             {% endif %}
 {#                            <ul class="dropdown-menu">#}
 {#                                {% for language in languages %}#}
