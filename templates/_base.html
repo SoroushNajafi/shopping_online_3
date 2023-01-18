@@ -126,9 +126,9 @@
                         {% if user.is_authenticated %}
                             <div class="toolbar-item d-none d-lg-block">
                                 <div class="dropdown">
-                                    <button style="background-color: white; color: black" class="btn btn-secondary dropdown-toggle" type="button"
+                                    <button style="background-color: white; color: black" class="btn-shape-rounded mt-3" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
-                                        {% trans 'Welcome ' %}{{ user.username }}
+                                        {% trans 'Welcome ' %}{{ user.username }} <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="profile.html">{% trans 'Profile' %}</a></li>
