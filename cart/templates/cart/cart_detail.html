@@ -7,10 +7,11 @@
 {% load persian_translation_number_tag %}
 
 {% block page_title %}
-    {% trans 'Cart' as cart_title %}
+    {% trans 'Cart' %}
 {% endblock %}
 
 {% block content %}
+        {% trans 'Cart' as cart_title %}
     {% include 'Breadcrumb.html' with title=cart_title %}
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">

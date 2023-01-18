@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="header__main">
                     <div class="header__col header__left">
-                        <a href="index.html" class="logo">
+                        <a href="{% url 'home' %}" class="logo">
                             <figure class="logo--normal">
                                 <img src="{% static 'img/logo/logo.png' %}" alt="Logo">
                             </figure>
@@ -72,8 +72,8 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="mainmenu__item menu-item-has-children position-relative">
-                                    <a href="#" class="mainmenu__link">{% trans 'Blog' %}</a>
+{#                                <li class="mainmenu__item menu-item-has-children position-relative">#}
+{#                                    <a href="#" class="mainmenu__link">{% trans 'Blog' %}</a>#}
 {#                                    <div class="inner-menu">#}
 {#                                        <ul class="sub-menu">#}
 {#                                            <li class="has-children">#}
@@ -115,7 +115,7 @@
 {#                                            </li>#}
 {#                                        </ul>#}
 {#                                    </div>#}
-                                </li>
+{#                                </li>#}
                                 <li class="mainmenu__item">
                                     <a href="{% url 'contact_us' %}" class="mainmenu__link">{% trans 'Contact Us' %}</a>
                                 </li>
@@ -126,7 +126,7 @@
                         {% if user.is_authenticated %}
                             <div class="toolbar-item d-none d-lg-block">
                                 <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    <button style="background-color: white; color: black" class="btn btn-secondary dropdown-toggle" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                         {% trans 'Welcome ' %}{{ user.username }}
                                     </button>
@@ -142,8 +142,8 @@
                             </div>
                         {% else %}
                             <div class="toolbar-item d-none d-lg-block mt-3">
-                                <a href="{% url 'account_login' %}" class="toolbar-btn">{% trans 'Login' %}</a> |
-                                <a href="{% url 'account_signup' %}" class="toolbar-btn">{% trans 'Signup' %}</a>
+                                <a href="{% url 'account_login' %}" style="font-size: 21px" class="toolbar-btn">{% trans 'Login' %}</a> |
+                                <a href="{% url 'account_signup' %}" style="font-size: 21px" class="toolbar-btn">{% trans 'Signup' %}</a>
                             </div>
                         {% endif %}
 {#                        <div class="toolbar-item d-block d-lg-none">#}
@@ -172,20 +172,25 @@
                             </a>
                         </div>
                         <div class="btn-group">
-                            <button style="background-color:black;" class="btn-shape-rounded" data-bs-toggle="dropdown"
-                                    aria-expanded="false"><i class="fa fa-language" style="color:white;"></i>
-
-                            </button>
-                            <ul class="dropdown-menu">
+{#                            <button style="background-color:white;" class="btn-shape-rounded" data-bs-toggle="dropdown"#}
+{#                                    aria-expanded="false"><i class="fa fa-language" style="color:black;"></i>#}
+{##}
+{#                            </button>#}
                                 {% get_current_language as LANGUAGE_CODE %}
                                 {% get_available_languages as LANGUAGES %}
                                 {% get_language_info_list for LANGUAGES as languages %}
-                                {% for language in languages %}
-
-                                    <li><a class="dropdown-item"
-                                           href="/{{ language.code }}{{ request.path|path_modifier }}">{{ language.name_local }}</a></li>
-
-                                {% endfor %}
+                            {% if LANGUAGE_CODE == 'fa' %}
+                            <button style="background-color: white" class="btn-shape-rounded"><a href="/en{{ request.path|path_modifier }}">{% trans 'English' %}</a></button>
+                                {% else %}
+                                <button style="background-color: white" class="btn-shape-rounded"><a href="/fa{{ request.path|path_modifier }}">{% trans 'Farsi' %}</a></button>
+                            {% endif %}
+{#                            <ul class="dropdown-menu">#}
+{#                                {% for language in languages %}#}
+{##}
+{#                                    <li><a class="dropdown-item"#}
+{#                                           href="/{{ language.code }}{{ request.path|path_modifier }}">{{ language.name_local }}</a></li>#}
+{##}
+{#                                {% endfor %}#}
                             </ul>
                         </div>
                     </div>

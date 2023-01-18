@@ -24,7 +24,8 @@ def contact_us_view(request):
                       _(f'Hi {sent_name}, you contacted us with {sent_email}, we will reach back to you soon.'),
                       None,
                       [sent_email],
-                      fail_silently=False)
+                      fail_silently=False,
+                      )
 
             contact_us_form.save()
             messages.success(request, _('your message has been sent successfully.'))
