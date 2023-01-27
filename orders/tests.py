@@ -30,28 +30,35 @@ class OrderTest(TestCase):
         self.client.post('/en/accounts/login/', {'password': 'password123456789',
                                                  'login': 'testing@gmail.com'}, follow=True)
 
+    def test_order_create_page_url(self):
         self.client.post(reverse('cart:add_to_cart', args=[self.product.id]), {'quantity': 1,
                                                                                'inplace': False}, follow=True)
-
-    def test_order_create_page_url(self):
         response = self.client.get('/en/order/create/')
         self.assertEqual(response.status_code, 200)
 
     def test_order_create_page_reverse(self):
+        self.client.post(reverse('cart:add_to_cart', args=[self.product.id]), {'quantity': 1,
+                                                                               'inplace': False}, follow=True)
         response = self.client.get(reverse('order_create'))
         self.assertEqual(response.status_code, 200)
 
     def test_order_create_page_content(self):
+        self.client.post(reverse('cart:add_to_cart', args=[self.product.id]), {'quantity': 1,
+                                                                               'inplace': False}, follow=True)
         response = self.client.get(reverse('order_create'))
         self.assertContains(response, self.product.title)
         self.assertContains(response, self.product.price)
         self.assertContains(response, 'place an order')
 
     def test_order_create_page_template_used(self):
+        self.client.post(reverse('cart:add_to_cart', args=[self.product.id]), {'quantity': 1,
+                                                                               'inplace': False}, follow=True)
         response = self.client.get(reverse('order_create'))
         self.assertTemplateUsed(response, 'orders/order_create.html')
 
     def test_order_create_post(self):
+        self.client.post(reverse('cart:add_to_cart', args=[self.product.id]), {'quantity': 1,
+                                                                               'inplace': False}, follow=True)
         response = self.client.post('/en/order/create/', {'first_name': 'sample_first',
                                                           'last_name': 'sample_last_name',
                                                           'phone_number': '0912234211',
