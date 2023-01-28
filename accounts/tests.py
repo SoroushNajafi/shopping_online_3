@@ -31,8 +31,8 @@ class SignUpViewTest(TestCase):
         self.assertEqual(get_user_model().objects.all().count(), 1)
         messages = list(response.context['messages'])
         print(response.context['messages'])
-        self.assertEqual(len(messages), 2)
-        self.assertEqual(str(messages[1]), 'Successfully signed in as sample_test.')
+        self.assertEqual(len(messages), 1)
+        self.assertEqual(str(messages[0]), 'Successfully signed in as sample_test.')
         self.assertEqual(response.status_code, 200)
 
 
