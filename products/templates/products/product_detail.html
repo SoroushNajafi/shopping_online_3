@@ -142,7 +142,7 @@
                             <h3 class="product-title mb--20">{{ product.title }}</h3>
                             <p class="product-short-description mb--20">{{ product.description|safe|truncatewords:18 }}</p>
                             <div class="product-price-wrapper mb--25">
-                                <span class="money">{% trans '$' %}{{ product.price|translate_number|intcomma }}</span>
+                                <span class="money">{% trans 'T' %} {{ product.price|translate_number|intcomma }}</span>
                             </div>
                             <div
                                     class="product-action d-flex flex-sm-row align-items-sm-center flex-column align-items-start mb--30">

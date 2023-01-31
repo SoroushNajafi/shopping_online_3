@@ -338,7 +338,7 @@
                                                 <strong><span>&#10005;</span> {{ item.quantity|translate_number }}</strong>
                                             </th>
                                             <td class="text-end">
-                                                {% trans '$' %}{{ item.total_price|translate_number|intcomma }}</td>
+                                                {% trans 'T' %} {{ item.total_price|translate_number|intcomma }}</td>
                                         </tr>
                                     {% endfor %}
 
@@ -357,7 +357,7 @@
                                     <tr class="order-total">
                                         <th>{% trans 'Order Total' %}</th>
                                         <td class="text-end"><span
-                                                class="order-total-ammount">{% trans '$' %}{{ cart.get_total_price|translate_number|intcomma }}</span>
+                                                class="order-total-ammount">{% trans 'T' %} {{ cart.get_total_price|translate_number|intcomma }}</span>
                                         </td>
                                     </tr>
                                     </tfoot>

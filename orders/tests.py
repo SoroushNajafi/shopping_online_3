@@ -20,7 +20,7 @@ class OrderTest(TestCase):
                                              fa_title='title', image='media/category/category_image/BEDROOM.jpg'),
             title='sample',
             description='sample_description',
-            price=20.99,
+            price=1500,
             image='media/products/product_images/Bar_Counter_Stools1.jpg',
             dimension='19cm*20cm*40cm',
             weight=20,

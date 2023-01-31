@@ -28,7 +28,7 @@
                                 <a class="mini-cart__product-title"
                                    href="{{ item.product_obj.get_absolute_url }}">{{ item.product_obj.title }}</a>
                                 <span class="mini-cart__product-quantity">{{ item.quantity }} x
-                                    {% trans '$' %}{{ item.product_obj.price }}</span>
+                                    {% trans 'T' %} {{ item.product_obj.price|translate_number|intcomma }}</span>
                             </div>
                         </li>
                     {% endfor %}

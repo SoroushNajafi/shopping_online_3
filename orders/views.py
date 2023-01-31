@@ -21,22 +21,24 @@ def order_create_view(request):
         order_form = OrderForm(request.POST)
 
         if order_form.is_valid():
-            order_from_obj = order_form.save(commit=False)
-            order_from_obj.user = request.user
-            order_from_obj.save()
+            order_obj = order_form.save(commit=False)
+            order_obj.user = request.user
+            order_obj.save()
 
             for item in cart:
                 OrderItem.objects.create(
-                    order=order_from_obj,
+                    order=order_obj,
                     product=item['product_obj'],
                     quantity=item['quantity'],
                     price=item['product_obj'].price,
                 )
             cart.clear()
 
-            request.user.first_name = order_from_obj.first_name
-            request.user.last_name = order_from_obj.last_name
+            request.user.first_name = order_obj.first_name
+            request.user.last_name = order_obj.last_name
             request.user.save()
-            messages.success(request, _('your order has been submitted successfully'))
+
+            request.session['order_id'] = order_obj.id
+            return redirect('payment:payment_process')
 
     return render(request, 'orders/order_create.html', {'order_form': order_form})
