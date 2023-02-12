@@ -24,7 +24,7 @@ msgstr "صفحه اصلی"
 
 #: .\templates\_base.html:60
 msgid "Shop"
-msgstr "خرید کنید"
+msgstr "خرید"
 
 #: .\templates\_base.html:63
 msgid "Categories"

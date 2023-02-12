@@ -55,7 +55,7 @@
                                                                 <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
                                                             </h3>
                                                             <div class="product__price">
-                                                                <span class="money">{{ product.price|translate_number|intcomma }}</span>
+                                                                <span class="money">{{ product.price|intcomma:False|translate_number }}</span>
                                                                 <span class="sign">{% trans 'T' %}</span>
                                                             </div>
                                                         </div>

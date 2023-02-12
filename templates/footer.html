@@ -27,7 +27,7 @@
                         <li>
                             <a href="{{ category.get_absolute_url }}">
                                 <i class="fa fa-angle-right"></i>
-                                <span>{{ category.get_name }}</span>
+                                <span>{{ category.get_name|lower|capfirst }}</span>
                             </a>
                         </li>
                         {% endfor %}

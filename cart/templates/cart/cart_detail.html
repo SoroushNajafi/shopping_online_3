@@ -53,7 +53,7 @@
                                                     </td>
                                                     <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{% trans 'T' %} {{ item.product_obj.price|translate_number|intcomma }}</span>
+                                                                <span class="money">{% trans 'T' %} {{ item.product_obj.price|intcomma:False|translate_number }}</span>
                                                             </span>
                                                     </td>
                                                     <td class="product-quantity">
@@ -74,7 +74,7 @@
                                                     </td>
                                                     <td class="product-total-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{% trans 'T' %} {{ item.total_price|translate_number|intcomma }}</span>
+                                                                <span class="money">{% trans 'T' %} {{ item.total_price|intcomma:False|translate_number }}</span>
                                                             </span>
                                                     </td>
                                                 </tr>
@@ -117,7 +117,7 @@
                                             <span>{% trans 'Subtotal' %}</span>
                                         </div>
                                         <div class="cart-calculator__item--value">
-                                            <span>{% trans 'T' %} {{ cart.get_total_price|translate_number|intcomma }}</span>
+                                            <span>{% trans 'T' %} {{ cart.get_total_price|intcomma:False|translate_number }}</span>
                                         </div>
                                     </div>
                                     <div class="cart-calculator__item">
@@ -244,7 +244,7 @@
                                         </div>
                                         <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">{% trans 'T' %} {{ cart.get_total_price|translate_number|intcomma }}</span>
+                                                    <span class="money">{% trans 'T' %} {{ cart.get_total_price|intcomma:False|translate_number }}</span>
                                                 </span>
                                         </div>
                                     </div>
