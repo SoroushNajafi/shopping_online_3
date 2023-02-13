@@ -17,6 +17,8 @@ class Order(models.Model):
     address = models.CharField(max_length=600)
     order_note = models.CharField(max_length=1000, blank=True)
     zarinpal_authority = models.CharField(max_length=260, blank=True)
+    zarinpal_ref_id = models.CharField(max_length=150, blank=True)
+    zarinpal_data = models.TextField(blank=True)
 
     is_paid = models.BooleanField(default=False)
 

@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}
+    {% trans 'Error' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <h4>{% trans 'Error from zarinpal.' %}</h4>
+    {% for error in errors %}
+    {{ error }}
+    {% endfor %}
+    </div>
+
+{% endblock %}
