@@ -156,7 +156,7 @@ def payment_callback_sandbox(request):
             'Authority': payment_authority,
         }
         response = requests.post(url='https://sandbox.zarinpal.com/pg/rest/WebGate/PaymentVerification.json',
-                                 data=json.dumps(request_data),
+                                 json=request_data,
                                  headers=request_header,
                                  )
 
