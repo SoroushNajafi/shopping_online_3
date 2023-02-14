@@ -3,8 +3,10 @@ from django.views.generic import TemplateView
 from django.core.mail import send_mail
 from django.utils.translation import gettext as _
 from django.contrib import messages
+from django.db.models import Q
 
 from .forms import ContactUsForm
+from products.models import Product
 
 
 class HomePageView(TemplateView):
@@ -33,3 +35,10 @@ def contact_us_view(request):
 
         form_errors = contact_us_form.errors
         return render(request, 'pages/contact_us.html', {'form_errors': form_errors})
+
+
+def search_result_view(request):
+    if request.method == 'GET':
+        query = request.GET.get('q')
+        products = Product.objects.filter(title__icontains=query)
+        return render(request, 'pages/search_result.html', {'products': products})

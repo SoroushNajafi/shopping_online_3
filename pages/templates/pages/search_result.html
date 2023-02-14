@@ -1,0 +1,50 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load persian_translation_number_tag %}
+{% load humanize %}
+
+{% block page_title %}
+    {% trans 'Search Result' %}
+{% endblock %}
+
+{% block content %}
+
+    {% for product in products %}
+        <div class="col-xl-4 col-sm-6">
+            <div class="payne-product">
+                <div class="product__inner">
+                    <div class="product__image">
+                        <figure class="product__image--holder">
+                            {% if product.image %}
+                                <img src="{{ product.image.url }}">
+                            {% endif %}
+                        </figure>
+                        <a href="{{ product.get_absolute_url }}" class="product__overlay"></a>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__info--left">
+                            <h3 class="product__title">
+                                <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                            </h3>
+                            <div class="product__price">
+                                <span class="money">{{ product.price|intcomma:False|translate_number }}</span>
+                                <span class="sign">{% trans 'T' %}</span>
+                            </div>
+                        </div>
+                        <div class="product__info--right">
+                                                        <span class="product__rating">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

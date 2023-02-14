@@ -120,7 +120,7 @@ def payment_process_sandbox(request):
         'CallbackURL': request.build_absolute_uri(reverse('payment:payment_callback')),
     }
 
-    response = requests.post(url=zarinpal_request_url, data=json.dumps(request_data), headers=request_header)
+    response = requests.post(url=zarinpal_request_url, json=request_data, headers=request_header)
 
     data = response.json()
     authority = data['Authority']
