@@ -40,5 +40,5 @@ def contact_us_view(request):
 def search_result_view(request):
     if request.method == 'GET':
         query = request.GET.get('q')
-        products = Product.objects.filter(title__icontains=query)
+        products = Product.objects.filter(Q(title__icontains=query) | Q(category__en_title__icontains=query))
         return render(request, 'pages/search_result.html', {'products': products})

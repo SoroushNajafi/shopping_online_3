@@ -132,8 +132,8 @@ def payment_process_sandbox(request):
 
     else:
         errors = data['errors']
-        messages.error(request, _('Error from zarinpal'))
-        return render(request, 'payment/error_from_zarinpal.html', {'errors': errors})
+        messages.error(request, _(f'Error from zarinpal-{errors}'))
+        return redirect('home')
 
 
 def payment_callback_sandbox(request):
@@ -170,15 +170,19 @@ def payment_callback_sandbox(request):
                 order.zarinpal_data = data
                 order.save()
 
-                return HttpResponse('your payment was successful.')
+                messages.success(request, _('your payment was successful.'))
+                return redirect('home')
 
             elif payment_code == 101:
-                return HttpResponse('You have done the payment before, this payment is duplicate.')
+                messages.warning(request, _('You have done the payment before, this payment is duplicate.'))
+                return redirect('home')
 
             else:
                 errors_code = response.json()['errors']['code']
                 errors_message = response.json()['errors']['message']
-                return HttpResponse(f'failure in payment;{errors_code}-{errors_message}')
+                messages.error(request, _(f'failure in payment;{errors_code}-{errors_message}'))
+                return redirect('home')
 
     else:
-        return HttpResponse(f'failure in payment')
+        messages.error(request, _('failure in payment'))
+        return redirect('home')
