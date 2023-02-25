@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.shortcuts import reverse
 
 from products.models import Product
 
@@ -30,6 +31,9 @@ class Order(models.Model):
 
     def get_total_price(self):
         return sum(item.quantity * item.price for item in self.items.all())
+
+    def get_absolute_url(self):
+        return reverse('order_detail', args=[self.id])
 
 
 class OrderItem(models.Model):

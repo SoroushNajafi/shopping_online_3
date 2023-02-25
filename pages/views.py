@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView
 from django.core.mail import send_mail
 from django.utils.translation import gettext as _
@@ -7,6 +7,7 @@ from django.db.models import Q
 
 from .forms import ContactUsForm
 from products.models import Product
+from orders.models import Order, OrderItem
 
 
 class HomePageView(TemplateView):
@@ -40,5 +41,12 @@ def contact_us_view(request):
 def search_result_view(request):
     if request.method == 'GET':
         query = request.GET.get('q')
+        # products = get_object_or_404(Product, title__in=query) #in khato mishe jaye khate payin nevesht?
         products = Product.objects.filter(Q(title__icontains=query) | Q(category__en_title__icontains=query))
         return render(request, 'pages/search_result.html', {'products': products})
+
+
+def my_profile_view(request):
+    if request.method == 'GET':
+        orders = Order.objects.filter(user_id=request.user.id).filter(is_paid=True)
+        return render(request, 'pages/my_profile.html', {'orders': orders})

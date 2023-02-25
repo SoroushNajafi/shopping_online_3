@@ -1,0 +1,147 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load persian_translation_number_tag %}
+{% load humanize %}
+
+{% block page_title %}
+    {% trans 'My Profile' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <span>{% trans 'ORDER No.' %}</span><strong>{{ order.id }}</strong><span>--{% trans 'INFO' %}</span>
+    </div>
+    <hr>
+    <div class="container">
+    <p><strong>FIRST NAME: </strong>{{ order.first_name|capfirst }}</p>
+    <p><strong>LAST NAME: </strong>{{ order.last_name|capfirst }}</p>
+    </div>
+  <!-- Main Content Wrapper Start -->
+        <div class="main-content-wrapper">
+            <div class="page-content-inner ptb--80 ptb-md--60">
+            <div class="container">
+        <strong class="">DETAILS:</strong>
+            </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12" id="main-content">
+                            <div class="table-content table-responsive">
+                                <div class="table-content table-responsive">
+                                    <table class="table compare-table">
+                                        <tbody>
+                                            <tr>
+                                                <th>Product Info</th>
+                                                {% for item in order.items.all %}
+                                                <td>
+                                                    <a href="{{ item.product.get_absolute_url }}" class="d-block">
+                                                        <div class="image-wrap" style="size: B4">
+                                                            {% if item.product.image %}
+                                                            <img height="120px" width="120px" src="{{ item.product.image.url }}">
+                                                            {% endif %}
+                                                        </div>
+                                                        <h4 class="product-name">{{ item.product.title }}</h4>
+                                                    </a>
+                                                </td>
+                                                {% endfor %}
+
+{#                                                <td>#}
+{#                                                    <div class="remove">#}
+{#                                                        <a href="">#}
+{#                                                            <i class="la la-remove"></i>#}
+{#                                                        </a>#}
+{#                                                    </div>#}
+{#                                                    <a href="product-details.html" class="d-block">#}
+{#                                                        <div class="image-wrap">#}
+{#                                                            <img src="assets/img/products/product-12-70x88.jpg"#}
+{#                                                                alt="Product">#}
+{#                                                        </div>#}
+{#                                                        <h4 class="product-name">Golden Easy Spot Chair.</h4>#}
+{#                                                    </a>#}
+{#                                                    <a href="cart.html" class="btn btn-size-md">Add to cart</a>#}
+{#                                                </td>#}
+{#                                                <td>#}
+{#                                                    <div class="remove">#}
+{#                                                        <a href="">#}
+{#                                                            <i class="la la-remove"></i>#}
+{#                                                        </a>#}
+{#                                                    </div>#}
+{#                                                    <a href="product-details.html" class="d-block">#}
+{#                                                        <div class="image-wrap">#}
+{#                                                            <img src="assets/img/products/product-13-70x88.jpg"#}
+{#                                                                alt="Product">#}
+{#                                                        </div>#}
+{#                                                        <h4 class="product-name">Golden Easy Spot Chair.</h4>#}
+{#                                                    </a>#}
+{#                                                    <a href="cart.html" class="btn btn-size-md">Add to cart</a>#}
+{#                                                </td>#}
+                                            </tr>
+                                            <tr>
+                                                <th>Price</th>
+                                                {% for item in order.items.all %}
+
+                                                <td>
+                                                    <span class="product-price-wrapper">
+                                                        <span class="money">{% trans 'T' %} {{ item.product.price|intcomma|translate_number }}</span>
+                                                    </span>
+                                                </td>
+                                                {% endfor %}
+
+{#                                                <td>#}
+{#                                                    <span class="product-price-wrapper">#}
+{#                                                        <span class="money">$159.00</span>#}
+{#                                                    </span>#}
+{#                                                </td>#}
+{#                                                <td>#}
+{#                                                    <span class="product-price-wrapper">#}
+{#                                                        <span class="money">$159.00</span>#}
+{#                                                    </span>#}
+{#                                                </td>#}
+                                            </tr>
+
+                                            <tr>
+                                                <th>Description</th>
+                                                {% for item in order.items.all %}
+                                                <td class="text-center">{{ item.product.description|safe|truncatewords:20 }}</td>
+                                                {% endfor %}
+
+{#                                                <td class="text-center">Donec accumsan auctor iaculis. Sed suscipit arcu#}
+{#                                                    ligula, at egestas… </td>#}
+{#                                                <td class="text-center">Donec accumsan auctor iaculis. Sed suscipit arcu#}
+{#                                                    ligula, at egestas… </td>#}
+                                            </tr>
+{#                                              <tr>#}
+{#                                                <th>Order Billing info</th>#}
+{#                                                <td></td>#}
+{#                                                <td>REF. LA-887</td>#}
+{##}
+{#                                            </tr>#}
+{#                                            <tr>#}
+{#                                                <th>Availability</th>#}
+{#                                                <td>In stock</td>#}
+{#                                                <td>In stock</td>#}
+{#                                                <td>In stock</td>#}
+{#                                            </tr>#}
+{#                                            <tr>#}
+{#                                                <th>Weight</th>#}
+{#                                                <td>N/A</td>#}
+{#                                                <td>N/A</td>#}
+{#                                                <td>N/A</td>#}
+{#                                            </tr>#}
+{#                                            <tr>#}
+{#                                                <th>Dimensions</th>#}
+{#                                                <td>N/A</td>#}
+{#                                                <td>N/A</td>#}
+{#                                                <td>N/A</td>#}
+{#                                            </tr>#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Wrapper Start -->
+{% endblock %}

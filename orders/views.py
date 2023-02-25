@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils.translation import gettext as _
+from django.views import generic
 
 from .forms import OrderForm
 from cart.cart import Cart
-from .models import OrderItem
+from .models import OrderItem, Order
 
 
 @login_required
@@ -42,3 +43,8 @@ def order_create_view(request):
             return redirect('payment:payment_process')
 
     return render(request, 'orders/order_create.html', {'order_form': order_form})
+
+
+def order_detail_view(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    return render(request, 'orders/order_detail.html', {'order': order})

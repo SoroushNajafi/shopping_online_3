@@ -176,7 +176,7 @@
                                         {% trans 'Welcome ' %}{{ user.username }} <i class="fa fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="profile.html">{% trans 'Profile' %}</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'my_profile' %}">{% trans 'Profile' %}</a></li>
                                         <li><a class="dropdown-item"
                                                href="{% url 'account_change_password' %}">{% trans 'Change Password' %}</a>
                                         </li>
@@ -202,12 +202,12 @@
                             {% get_available_languages as LANGUAGES %}
                             {% get_language_info_list for LANGUAGES as languages %}
                             {% if LANGUAGE_CODE == 'fa' %}
-                                <a href="/en{{ request.path|path_modifier }}">
+                                <a href="/en{{ request.get_full_path|path_modifier }}">
                                     <button style="background-color: white"
                                             class="btn-shape-rounded mt-1">{% trans 'English' %}</button>
                                 </a>
                             {% else %}
-                                <a href="/fa{{ request.path|path_modifier }}">
+                                <a href="/fa{{ request.get_full_path|path_modifier }}">
                                     <button style="background-color: white"
                                             class="btn-shape-rounded mt-1">{% trans 'Farsi' %}</button>
                                 </a>
