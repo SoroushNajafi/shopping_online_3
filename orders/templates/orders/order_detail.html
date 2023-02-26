@@ -29,7 +29,7 @@
                             <div class="table-content table-responsive">
                                 <div class="table-content table-responsive">
                                     <table class="table compare-table">
-                                        <tbody>
+                                        <tbody style="text-align: center">
                                             <tr>
                                                 <th>Product Info</th>
                                                 {% for item in order.items.all %}
@@ -77,39 +77,40 @@
 {#                                                </td>#}
                                             </tr>
                                             <tr>
-                                                <th>Price</th>
+                                                <th>Price x quantity</th>
                                                 {% for item in order.items.all %}
 
                                                 <td>
                                                     <span class="product-price-wrapper">
-                                                        <span class="money">{% trans 'T' %} {{ item.product.price|intcomma|translate_number }}</span>
+                                                        <span class="money">{% trans 'T' %} {{ item.product.price|intcomma|translate_number }} x {{ item.quantity }}</span>
                                                     </span>
                                                 </td>
                                                 {% endfor %}
-
-{#                                                <td>#}
-{#                                                    <span class="product-price-wrapper">#}
-{#                                                        <span class="money">$159.00</span>#}
-{#                                                    </span>#}
-{#                                                </td>#}
-{#                                                <td>#}
-{#                                                    <span class="product-price-wrapper">#}
-{#                                                        <span class="money">$159.00</span>#}
-{#                                                    </span>#}
-{#                                                </td>#}
-                                            </tr>
-
-                                            <tr>
-                                                <th>Description</th>
+                                             <tr>
+                                                <th>Total Price</th>
                                                 {% for item in order.items.all %}
-                                                <td class="text-center">{{ item.product.description|safe|truncatewords:20 }}</td>
+                                                <td class="text-center">{% trans 'T' %} {{ item.get_total_price|intcomma|translate_number }}</td>
                                                 {% endfor %}
 
 {#                                                <td class="text-center">Donec accumsan auctor iaculis. Sed suscipit arcu#}
 {#                                                    ligula, at egestas… </td>#}
 {#                                                <td class="text-center">Donec accumsan auctor iaculis. Sed suscipit arcu#}
 {#                                                    ligula, at egestas… </td>#}
-                                            </tr>
+{#                                            </tr>#}
+
+{#                                                <td>#}
+{#                                                    <span class="product-price-wrapper">#}
+{#                                                        <span class="money">$159.00</span>#}
+{#                                                    </span>#}
+{#                                                </td>#}
+{#                                                <td>#}
+{#                                                    <span class="product-price-wrapper">#}
+{#                                                        <span class="money">$159.00</span>#}
+{#                                                    </span>#}
+{#                                                </td>#}
+{#                                            </tr>#}
+
+
 {#                                              <tr>#}
 {#                                                <th>Order Billing info</th>#}
 {#                                                <td></td>#}

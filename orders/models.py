@@ -45,4 +45,5 @@ class OrderItem(models.Model):
     def __str__(self):
         return f'OrderItem-{self.id} of Order no.{self.order.id} : {self.product} x {self.quantity}(price:{self.price})'
 
-
+    def get_total_price(self):
+        return self.price * self.quantity

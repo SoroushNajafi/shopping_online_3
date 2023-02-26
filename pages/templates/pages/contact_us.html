@@ -55,20 +55,25 @@
                                 <h2>{% trans 'Contact Us' %}</h2>
                                 <hr class="delimeter">
                             </div>
-                            {% if form_errors %}
-                                {% for form_error in form_errors %}
-                                    {{ form_error }}
-                                {% endfor %}
-                            {% endif %}
                             <form action="{% url 'contact_us' %}" class="form" id="contact-form" method="post">
                                 {% csrf_token %}
                                 <input type="text" name="name" id="con_name" class="form__input mb--30"
                                        placeholder="{% trans 'Name*' %}">
+                                {% if contact_us_form.errors %}
+                                {{ contact_us_form.errors.name }}
+                                {% endif %}
                                 <input type="email" name="email" id="con_email" class="form__input mb--30"
                                        placeholder="{% trans 'Email*' %}">
+                             {% if contact_us_form.errors %}
+                                {{ contact_us_form.errors.email }}
+                                {% endif %}
                                 <textarea class="form__input form__input--textarea mb--30"
                                           placeholder="{% trans 'Message' %}" id="con_message"
                                           name="message"></textarea>
+                             {% if contact_us_form.errors %}
+                                {{ contact_us_form.errors.message }}
+                                {% endif %}
+                            {{ contact_us_form.non_field_errors }}
                                 <button type="submit"
                                         class="btn btn-shape-round form__submit">{% trans 'Send' %}</button>
                             </form>

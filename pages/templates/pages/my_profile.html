@@ -15,7 +15,8 @@
       <div class="row">
         <div class="col-md-6">
           <h2>Order History</h2>
-          <table class="table" style="text-align: center;border-bottom-style: solid;border-left-style: solid">
+        <div style="height: 300px; overflow-y: scroll;">
+          <table class="table" style="text-align: center;border-bottom-style: solid;border-left-style: solid; border-right-style: solid">
             <thead>
               <tr>
                 <th>Order Number</th>
@@ -29,38 +30,53 @@
               <tr>
                   <td><a href="{{ order.get_absolute_url }}">{{ order }}</a></td>
                 <td>{{ order.datetime_created }}</td>
-                <td>{{ order.get_total_price }} {% trans 'T' %}</td>
+                <td>{{ order.get_total_price|intcomma|translate_number }} {% trans 'T' %}</td>
               </tr>
             {% endfor %}
 
             </tbody>
           </table>
         </div>
+        </div>
 
         <div class="col-md-6">
           <h2>Update Information</h2>
-          <form>
-            <div class="form-group">
+          <form action="{% url 'my_profile' %}" method="post">
+              {% csrf_token %}
+            <div class="form-group mt-3">
               <label for="username">Username:</label>
-              <input type="text" class="form-control" id="username" name="username">
+              <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}">
+                {% if form.errors %}
+                {{ form.errors.username }}
+                {% endif %}
             </div>
 
-            <div class="form-group">
+            <div class="form-group mt-3">
               <label for="first-name">First Name:</label>
-              <input type="text" class="form-control" id="first-name" name="first-name">
+              <input type="text" class="form-control" id="first-name" name="first_name" value="{{ user.first_name }}">
+                {% if form.errors %}
+                {{ form.errors.first_name }}
+                {% endif %}
             </div>
 
-            <div class="form-group">
+            <div class="form-group mt-3">
               <label for="last-name">Last Name:</label>
-              <input type="text" class="form-control" id="last-name" name="last-name">
+              <input type="text" class="form-control" id="last-name" name="last_name" value="{{ user.last_name }}">
+                {% if form.errors %}
+                {{ form.errors.last_name }}
+                {% endif %}
             </div>
 
-            <div class="form-group">
+            <div class="form-group mt-3">
               <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" name="email">
+              <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}">
+                {% if form.errors %}
+                {{ form.errors.email }}
+                {% endif %}
             </div>
+            {{ form.non_field_errors }}
 
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button style="background-color: black;color: white" type="submit" class="btn-shape-rounded mt-3">Update</button>
           </form>
         </div>
       </div>
