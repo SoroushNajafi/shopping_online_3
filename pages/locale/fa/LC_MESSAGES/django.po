@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-26 17:21+0330\n"
+"POT-Creation-Date: 2023-02-28 15:37+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,88 +17,142 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\pages\templates\pages\contact_us.html:6
+#: .\templates\pages\contact_us.html:6
 msgid "Contact Us Page"
 msgstr "صفحه تماس با ما"
 
-#: .\pages\templates\pages\contact_us.html:55
+#: .\templates\pages\contact_us.html:55
 msgid "Contact Us"
 msgstr "تماس با ما"
 
-#: .\pages\templates\pages\contact_us.html:61
+#: .\templates\pages\contact_us.html:61
 msgid "Name*"
 msgstr "نام*"
 
-#: .\pages\templates\pages\contact_us.html:66
+#: .\templates\pages\contact_us.html:66
 msgid "Email*"
 msgstr "پست الکترونیک*"
 
-#: .\pages\templates\pages\contact_us.html:71
+#: .\templates\pages\contact_us.html:71
 msgid "Message"
 msgstr "پیام"
 
-#: .\pages\templates\pages\contact_us.html:78
+#: .\templates\pages\contact_us.html:78
 msgid "Send"
 msgstr "ارسال"
 
-#: .\pages\templates\pages\home.html:6
+#: .\templates\pages\home.html:6
 msgid "Home Page"
 msgstr "صفحه نخست"
 
-#: .\pages\templates\pages\home.html:27
+#: .\templates\pages\home.html:27
 msgid "AMAZING PRODUCT!"
 msgstr "محصول شگفت انگیز!"
 
-#: .\pages\templates\pages\home.html:29
+#: .\templates\pages\home.html:29
 msgid "Furniture"
 msgstr "مبلمان"
 
-#: .\pages\templates\pages\home.html:35
+#: .\templates\pages\home.html:35
 msgid "Shop Now"
 msgstr "اکنون خرید کنید"
 
-#: .\pages\templates\pages\home.html:134
+#: .\templates\pages\home.html:134
 msgid "Categories"
 msgstr "دسته بندی ها"
 
-#: .\pages\templates\pages\home.html:135
+#: .\templates\pages\home.html:135
 msgid "Search in categories as you explore..."
 msgstr "همانطور که کاوش می کنید در دسته بندی ها جستجو کنید..."
 
-#: .\pages\templates\pages\home.html:367
+#: .\templates\pages\home.html:367
 msgid "Methods"
 msgstr "روش ها"
 
-#: .\pages\templates\pages\home.html:374
+#: .\templates\pages\home.html:374
 msgid "Free Home Delivery"
 msgstr "ارسال رایگان درب منزل"
 
-#: .\pages\templates\pages\home.html:380
+#: .\templates\pages\home.html:380
 msgid "MONEY BACK GUARANTEE"
 msgstr "تضمین بازگشت پول"
 
-#: .\pages\templates\pages\home.html:386
+#: .\templates\pages\home.html:386
 msgid "SUPPORT 24/7"
 msgstr "پشتیبانی 24/7"
 
-#: .\pages\templates\pages\my_profile.html:8
+#: .\templates\pages\my_profile.html:8
 msgid "My Profile"
 msgstr "پروفایل من"
 
-#: .\pages\templates\pages\my_profile.html:33
-#: .\pages\templates\pages\search_result.html:33
+#: .\templates\pages\my_profile.html:13
+#, fuzzy
+#| msgid "Home Page"
+msgid "Profile Page"
+msgstr "صفحه نخست"
+
+#: .\templates\pages\my_profile.html:17
+msgid "Order History"
+msgstr "تاریخچه سفارش ها"
+
+#: .\templates\pages\my_profile.html:22
+msgid "Order Number"
+msgstr "شماره سفارش"
+
+#: .\templates\pages\my_profile.html:23
+msgid "Date"
+msgstr "تاریخ"
+
+#: .\templates\pages\my_profile.html:24
+msgid "Amount"
+msgstr "مبلغ"
+
+#: .\templates\pages\my_profile.html:33
+#: .\templates\pages\search_result.html:33
 msgid "T"
 msgstr "تومان"
 
-#: .\pages\templates\pages\search_result.html:8
+#: .\templates\pages\my_profile.html:43
+msgid "Update Information"
+msgstr "به روز رسانی اطلاعات"
+
+#: .\templates\pages\my_profile.html:47
+msgid "Username:"
+msgstr "نام کاربری:"
+
+#: .\templates\pages\my_profile.html:55
+msgid "First Name:"
+msgstr "نام کوچک:"
+
+#: .\templates\pages\my_profile.html:63
+msgid "Last Name:"
+msgstr "نام خانوادگی:"
+
+#: .\templates\pages\my_profile.html:71
+msgid "Email:"
+msgstr "پست الکترونیک*"
+
+#: .\templates\pages\my_profile.html:79
+msgid "Update"
+msgstr "به روز رسانی"
+
+#: .\templates\pages\search_result.html:8
 msgid "Search Result"
 msgstr "نتیجه جستجو"
 
-#: .\pages\views.py:29
+#: .\templates\pages\search_result.html:54
+msgid "Pre"
+msgstr "قبل"
+
+#: .\templates\pages\search_result.html:59
+msgid "Next"
+msgstr "بعد"
+
+#: .\views.py:31
 msgid "Thank you for contacting us"
 msgstr "از اینکه با ما تماس گرفتید، متشکریم"
 
-#: .\pages\views.py:30
+#: .\views.py:32
 msgid ""
 "Hi {sent_name}, you contacted us with {sent_email}, we will reach back to "
 "you soon."
@@ -106,10 +160,10 @@ msgstr ""
 "سلام {sent_name}, شما با ما تماس گرفتید با {sent_email}, با شما تماس خواهیم "
 "گرفت"
 
-#: .\pages\views.py:37
+#: .\views.py:39
 msgid "your message has been sent successfully."
 msgstr "پیغام شما با موفقیت ارسال گردید."
 
-#: .\pages\views.py:66
+#: .\views.py:85
 msgid "your information is now up to date"
 msgstr "اطلاعات شما بروز شد"

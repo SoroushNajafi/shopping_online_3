@@ -14,14 +14,14 @@
     </div>
     <hr>
     <div class="container">
-    <p><strong>FIRST NAME: </strong>{{ order.first_name|capfirst }}</p>
-    <p><strong>LAST NAME: </strong>{{ order.last_name|capfirst }}</p>
+    <p><strong>{% trans 'FIRST NAME: ' %}</strong>{{ order.first_name|capfirst }}</p>
+    <p><strong>{% trans 'LAST NAME: ' %}</strong>{{ order.last_name|capfirst }}</p>
     </div>
   <!-- Main Content Wrapper Start -->
         <div class="main-content-wrapper">
             <div class="page-content-inner ptb--80 ptb-md--60">
             <div class="container">
-        <strong class="">DETAILS:</strong>
+        <strong class="">{% trans 'DETAILS:' %}</strong>
             </div>
                 <div class="container">
                     <div class="row">
@@ -31,7 +31,7 @@
                                     <table class="table compare-table">
                                         <tbody style="text-align: center">
                                             <tr>
-                                                <th>Product Info</th>
+                                                <th>{% trans 'Product Info' %}</th>
                                                 {% for item in order.items.all %}
                                                 <td>
                                                     <a href="{{ item.product.get_absolute_url }}" class="d-block">
@@ -77,19 +77,19 @@
 {#                                                </td>#}
                                             </tr>
                                             <tr>
-                                                <th>Price x quantity</th>
+                                                <th>{% trans 'Price x quantity' %}</th>
                                                 {% for item in order.items.all %}
 
                                                 <td>
                                                     <span class="product-price-wrapper">
-                                                        <span class="money">{% trans 'T' %} {{ item.product.price|intcomma|translate_number }} x {{ item.quantity }}</span>
+                                                        <span class="money">{% trans 'T' %} {{ item.product.price|intcomma:False|translate_number }} x {{ item.quantity|translate_number }}</span>
                                                     </span>
                                                 </td>
                                                 {% endfor %}
                                              <tr>
-                                                <th>Total Price</th>
+                                                <th>{% trans 'Total Price' %}</th>
                                                 {% for item in order.items.all %}
-                                                <td class="text-center">{% trans 'T' %} {{ item.get_total_price|intcomma|translate_number }}</td>
+                                                <td class="text-center">{% trans 'T' %} {{ item.get_total_price|intcomma:False|translate_number }}</td>
                                                 {% endfor %}
 
 {#                                                <td class="text-center">Donec accumsan auctor iaculis. Sed suscipit arcu#}
