@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-13 12:13+0330\n"
+"POT-Creation-Date: 2023-02-26 17:21+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,19 +25,19 @@ msgstr "صفحه تماس با ما"
 msgid "Contact Us"
 msgstr "تماس با ما"
 
-#: .\pages\templates\pages\contact_us.html:66
+#: .\pages\templates\pages\contact_us.html:61
 msgid "Name*"
 msgstr "نام*"
 
-#: .\pages\templates\pages\contact_us.html:68
+#: .\pages\templates\pages\contact_us.html:66
 msgid "Email*"
 msgstr "پست الکترونیک*"
 
-#: .\pages\templates\pages\contact_us.html:70
+#: .\pages\templates\pages\contact_us.html:71
 msgid "Message"
 msgstr "پیام"
 
-#: .\pages\templates\pages\contact_us.html:73
+#: .\pages\templates\pages\contact_us.html:78
 msgid "Send"
 msgstr "ارسال"
 
@@ -81,11 +81,24 @@ msgstr "تضمین بازگشت پول"
 msgid "SUPPORT 24/7"
 msgstr "پشتیبانی 24/7"
 
-#: .\pages\views.py:23
+#: .\pages\templates\pages\my_profile.html:8
+msgid "My Profile"
+msgstr "پروفایل من"
+
+#: .\pages\templates\pages\my_profile.html:33
+#: .\pages\templates\pages\search_result.html:33
+msgid "T"
+msgstr "تومان"
+
+#: .\pages\templates\pages\search_result.html:8
+msgid "Search Result"
+msgstr "نتیجه جستجو"
+
+#: .\pages\views.py:29
 msgid "Thank you for contacting us"
 msgstr "از اینکه با ما تماس گرفتید، متشکریم"
 
-#: .\pages\views.py:24
+#: .\pages\views.py:30
 msgid ""
 "Hi {sent_name}, you contacted us with {sent_email}, we will reach back to "
 "you soon."
@@ -93,6 +106,10 @@ msgstr ""
 "سلام {sent_name}, شما با ما تماس گرفتید با {sent_email}, با شما تماس خواهیم "
 "گرفت"
 
-#: .\pages\views.py:30
+#: .\pages\views.py:37
 msgid "your message has been sent successfully."
 msgstr "پیغام شما با موفقیت ارسال گردید."
+
+#: .\pages\views.py:66
+msgid "your information is now up to date"
+msgstr "اطلاعات شما بروز شد"

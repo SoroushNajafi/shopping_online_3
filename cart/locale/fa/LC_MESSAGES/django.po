@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-13 12:13+0330\n"
+"POT-Creation-Date: 2023-02-26 17:21+0330\n"
 "PO-Revision-Date: 2023-01-13 08:49+0000\n"
 "Last-Translator: soori naj <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,71 +35,78 @@ msgid "cart cleared successfully"
 msgstr "سبد خرید با موفقیت خالی شد"
 
 #: .\cart\templates\cart\cart_detail.html:10
+#: .\cart\templates\cart\cart_detail.html:14
 msgid "Cart"
 msgstr "سبد خرید"
 
-#: .\cart\templates\cart\cart_detail.html:30
+#: .\cart\templates\cart\cart_detail.html:31
 msgid "Product"
 msgstr "محصول"
 
-#: .\cart\templates\cart\cart_detail.html:31
+#: .\cart\templates\cart\cart_detail.html:32
 msgid "price"
 msgstr "قیمت"
 
-#: .\cart\templates\cart\cart_detail.html:32
+#: .\cart\templates\cart\cart_detail.html:33
 msgid "quantity"
 msgstr "تعداد"
 
-#: .\cart\templates\cart\cart_detail.html:33
+#: .\cart\templates\cart\cart_detail.html:34
 msgid "total"
 msgstr "جمع"
 
-#: .\cart\templates\cart\cart_detail.html:85
+#: .\cart\templates\cart\cart_detail.html:56
+#: .\cart\templates\cart\cart_detail.html:77
+#: .\cart\templates\cart\cart_detail.html:120
+#: .\cart\templates\cart\cart_detail.html:247
+#: .\cart\templates\cart\cart_sidebar.html:31
+msgid "T"
+msgstr ""
+
+#: .\cart\templates\cart\cart_detail.html:86
 msgid "There is no product in your cart, "
 msgstr "هیچ محصولی در سبد خرید شما وجود ندارد،"
 
-#: .\cart\templates\cart\cart_detail.html:86
+#: .\cart\templates\cart\cart_detail.html:87
 msgid "Go Shopping"
 msgstr "به خرید بروید"
 
-#: .\cart\templates\cart\cart_detail.html:102
+#: .\cart\templates\cart\cart_detail.html:103
 msgid "Clear Cart"
 msgstr "خالی کردن سبد خرید"
 
-#: .\cart\templates\cart\cart_detail.html:112
+#: .\cart\templates\cart\cart_detail.html:113
 msgid "Cart totals"
 msgstr "مجموع سبد خرید"
 
-#: .\cart\templates\cart\cart_detail.html:116
+#: .\cart\templates\cart\cart_detail.html:117
 msgid "Subtotal"
 msgstr "جمع فرعی"
 
-#: .\cart\templates\cart\cart_detail.html:124
+#: .\cart\templates\cart\cart_detail.html:125
 msgid "Shipping"
 msgstr "حمل "
 
-#: .\cart\templates\cart\cart_detail.html:127
+#: .\cart\templates\cart\cart_detail.html:128
 msgid "Free Shipping"
 msgstr "حمل"
 
-#: .\cart\templates\cart\cart_detail.html:242
+#: .\cart\templates\cart\cart_detail.html:243
 #: .\cart\templates\cart\cart_sidebar.html:38
 msgid "Total"
 msgstr "مجموع"
 
-#: .\cart\templates\cart\cart_detail.html:246
-#: .\cart\templates\cart\cart_sidebar.html:31
-#: .\cart\templates\cart\cart_sidebar.html:39
-msgid "$"
-msgstr "دلار"
-
-#: .\cart\templates\cart\cart_detail.html:253
+#: .\cart\templates\cart\cart_detail.html:254
 msgid "Proceed To Checkout"
 msgstr "به پرداخت ادامه دهید"
 
 #: .\cart\templates\cart\cart_sidebar.html:13
 msgid "Shopping Cart"
 msgstr "سبد خرید"
+
+#: .\cart\templates\cart\cart_sidebar.html:39
+msgid "$"
+msgstr "دلار"
 
 #: .\cart\templates\cart\cart_sidebar.html:43
 msgid "View Cart"

@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-26 17:21+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\payment\views.py:135
+msgid "Error from zarinpal-{errors}"
+msgstr "خطا از zarinpal-{errors}"
+
+#: .\payment\views.py:173
+msgid "your payment was successful."
+msgstr "پرداخت شما با موفقیت انجام شد"
+
+#: .\payment\views.py:177
+msgid "You have done the payment before, this payment is duplicate."
+msgstr "شما قبلا پرداخت را انجام داده اید، این پرداخت تکراری است."
+
+#: .\payment\views.py:183
+msgid "failure in payment;{errors_code}-{errors_message}"
+msgstr "پرداخت ناموفق؛{errors_code}-{errors_message}"
+
+#: .\payment\views.py:187
+msgid "failure in payment"
+msgstr "پرداخت ناموفق"

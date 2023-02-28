@@ -4,6 +4,8 @@ from django.core.mail import send_mail
 from django.utils.translation import gettext as _
 from django.contrib import messages
 from django.db.models import Q
+from django.core.paginator import Paginator
+from django.views import generic
 
 from .forms import ContactUsForm, MyProfileForm
 from products.models import Product
@@ -44,11 +46,28 @@ def search_result_view(request):
     if request.method == 'GET':
         query = request.GET.get('q')
         products = Product.objects.filter(Q(title__icontains=query) | Q(category__en_title__icontains=query))
-        return render(request, 'pages/search_result.html', {'products': products})
+        paginator = Paginator(products, 3)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        return render(request, 'pages/search_result.html', {'query': query, 'page_obj': page_obj})
 
+
+# class SearchResult(generic.ListView):
+#     template_name = 'pages/search_result.html'
+#     paginate_by = 3
+#     context_object_name = 'products'
+#
+#     def get_queryset(self):
+#         query = self.request.GET.get('q')
+#         return Product.objects.filter(Q(title__icontains=query) | Q(category__en_title__icontains=query))
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         query = self.request.GET.get('q')
+#         context['query'] = query
+#         return context
 
 def my_profile_view(request):
-
     profile_form = MyProfileForm()
     user = request.user
 

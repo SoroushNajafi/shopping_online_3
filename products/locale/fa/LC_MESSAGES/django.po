@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-01 00:06+0330\n"
+"POT-Creation-Date: 2023-02-26 17:21+0330\n"
 "PO-Revision-Date: 2023-01-31 20:37+0000\n"
 "Last-Translator: sorooooooooo naaaajjjjj <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,177 +18,177 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\models.py:62
+#: .\products\models.py:62
 msgid "Very Bad"
 msgstr "خیلی بد"
 
-#: .\models.py:63
+#: .\products\models.py:63
 msgid "Bad"
 msgstr "بد"
 
-#: .\models.py:64
+#: .\products\models.py:64
 msgid "Normal"
 msgstr "معمولی"
 
-#: .\models.py:65
+#: .\products\models.py:65
 msgid "Good"
 msgstr "خوب"
 
-#: .\models.py:66
+#: .\products\models.py:66
 msgid "Perfect"
 msgstr "عالی"
 
-#: .\models.py:71
+#: .\products\models.py:71
 msgid "your review"
 msgstr "نظر شما"
 
-#: .\models.py:72
+#: .\products\models.py:72
 msgid "your score to this product"
 msgstr "امتیاز شما به این محصول"
 
-#: .\templates\products\comment_delete.html:7
-#: .\templates\products\comment_delete.html:12
+#: .\products\templates\products\comment_delete.html:7
+#: .\products\templates\products\comment_delete.html:12
 msgid "Comment Delete"
 msgstr "حذف نظر "
 
-#: .\templates\products\comment_delete.html:16
+#: .\products\templates\products\comment_delete.html:16
 msgid "Are you sure you want to delete this comment?"
 msgstr "آیا مطمئن هستید که می خواهید این نظر را حذف کنید؟"
 
-#: .\templates\products\comment_delete.html:17
+#: .\products\templates\products\comment_delete.html:17
 msgid "Yes Delete"
 msgstr "بله حذف کنید"
 
-#: .\templates\products\comment_delete.html:20
+#: .\products\templates\products\comment_delete.html:20
 msgid "Never mind"
 msgstr "بیخیال"
 
-#: .\templates\products\comment_update.html:10
+#: .\products\templates\products\comment_update.html:10
 msgid "Comment Update"
 msgstr "به روز رسانی نظر"
 
-#: .\templates\products\comment_update.html:17
+#: .\products\templates\products\comment_update.html:17
 msgid "Edit Comment"
 msgstr "ویرایش نظر"
 
-#: .\templates\products\comment_update.html:22
-#: .\templates\products\product_detail.html:272
+#: .\products\templates\products\comment_update.html:22
+#: .\products\templates\products\product_detail.html:272
 msgid "Edit"
 msgstr "ویرایش"
 
-#: .\templates\products\comment_update.html:25
+#: .\products\templates\products\comment_update.html:25
 msgid "Go Back"
 msgstr "برگرد"
 
-#: .\templates\products\product_detail.html:11
-#: .\templates\products\product_detail.html:15
+#: .\products\templates\products\product_detail.html:11
+#: .\products\templates\products\product_detail.html:15
 msgid "Product detail"
 msgstr "جزئیات محصول"
 
-#: .\templates\products\product_detail.html:145
-#: .\templates\products\products_by_category.html:59
-#: .\templates\products\products_list.html:59
+#: .\products\templates\products\product_detail.html:145
+#: .\products\templates\products\product_detail.html:379
+#: .\products\templates\products\products_by_category.html:59
+#: .\products\templates\products\products_list.html:59
 msgid "T"
 msgstr "تومان"
 
-#: .\templates\products\product_detail.html:158
+#: .\products\templates\products\product_detail.html:158
 msgid "Add To Cart"
 msgstr "افزودن به سبد خرید"
 
-#: .\templates\products\product_detail.html:174
+#: .\products\templates\products\product_detail.html:174
 msgid "Category:"
 msgstr "دسته بندی:"
 
-#: .\templates\products\product_detail.html:189
+#: .\products\templates\products\product_detail.html:189
 msgid "Description"
 msgstr "توضیحات"
 
-#: .\templates\products\product_detail.html:194
+#: .\products\templates\products\product_detail.html:194
 msgid "Additional Information"
 msgstr "اطلاعات تکمیلی"
 
-#: .\templates\products\product_detail.html:199
+#: .\products\templates\products\product_detail.html:199
 msgid "Reviews"
 msgstr "نظرات"
 
-#: .\templates\products\product_detail.html:209
+#: .\products\templates\products\product_detail.html:209
 msgid "Characteristics :"
 msgstr "مشخصات:"
 
-#: .\templates\products\product_detail.html:222
+#: .\products\templates\products\product_detail.html:222
 msgid "Weight"
 msgstr "وزن"
 
-#: .\templates\products\product_detail.html:226
+#: .\products\templates\products\product_detail.html:226
 msgid "Dimensions"
 msgstr "ابعاد"
 
-#: .\templates\products\product_detail.html:246
+#: .\products\templates\products\product_detail.html:246
 msgid "review for"
 msgstr "نظر برای"
 
-#: .\templates\products\product_detail.html:274
+#: .\products\templates\products\product_detail.html:274
 msgid "Delete"
 msgstr "حذف"
 
-#: .\templates\products\product_detail.html:286
+#: .\products\templates\products\product_detail.html:286
 msgid "Add a review"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:296
+#: .\products\templates\products\product_detail.html:296
 msgid "Submit"
 msgstr "ارسال"
 
-#: .\templates\products\product_detail.html:303
+#: .\products\templates\products\product_detail.html:303
 msgid "In order to submit a review please "
 msgstr "برای ارسال نظر لطفا"
 
-#: .\templates\products\product_detail.html:305
+#: .\products\templates\products\product_detail.html:305
 msgid "Login"
 msgstr "وارد شوید"
 
-#: .\templates\products\product_detail.html:317
+#: .\products\templates\products\product_detail.html:317
 msgid "Related Products"
 msgstr "محصولات مرتبط"
 
-#: .\templates\products\product_detail.html:379
-msgid "$"
-msgstr "دلار"
-
-#: .\templates\products\products_by_category.html:8
+#: .\products\templates\products\products_by_category.html:8
 msgid "Products by Category"
 msgstr "محصولات بر اساس دسته"
 
-#: .\templates\products\products_by_category.html:83
-#: .\templates\products\products_list.html:83
+#: .\products\templates\products\products_by_category.html:83
+#: .\products\templates\products\products_list.html:83
 msgid "Pre"
 msgstr "قبل"
 
-#: .\templates\products\products_by_category.html:88
-#: .\templates\products\products_list.html:88
+#: .\products\templates\products\products_by_category.html:88
+#: .\products\templates\products\products_list.html:88
 msgid "Next"
 msgstr "بعد"
 
-#: .\templates\products\products_by_category.html:96
-#: .\templates\products\products_list.html:96
+#: .\products\templates\products\products_by_category.html:96
+#: .\products\templates\products\products_list.html:96
 msgid "Category"
 msgstr "دسته بندی"
 
-#: .\templates\products\products_list.html:8
+#: .\products\templates\products\products_list.html:8
 msgid "Products list"
 msgstr "لیست محصولات"
 
-#: .\templates\products\products_list.html:15
+#: .\products\templates\products\products_list.html:15
 msgid "Products"
 msgstr "لیست محصولات"
 
-#: .\views.py:61
+#: .\products\views.py:61
 msgid "Your comment added successfully"
 msgstr "نظر شما با موفقیت اضافه شد"
 
-#: .\views.py:85
+#: .\products\views.py:85
 msgid "comment deleted successfully."
 msgstr "نظر با موفقیت حذف شد."
+
+#~ msgid "$"
+#~ msgstr "دلار"
 
 #~ msgid "Quantity:"
 #~ msgstr "تعداد:"

@@ -11,7 +11,7 @@
 {% block content %}
     <div class="shop-products">
         <div class="row">
-            {% for product in products %}
+            {% for product in page_obj %}
                 <div class="col-xl-4 col-sm-6">
                     <div class="payne-product">
                         <div class="product__inner">
@@ -47,6 +47,20 @@
                     </div>
                 </div>
             {% endfor %}
+        <nav class="pagination-wrap">
+                                <ul class="pagination">
+                                    {% if page_obj.has_previous %}
+
+                                    <li><a href="?page={{ page_obj.previous_page_number }}&q={{ query }}" class="page-number">{% trans 'Pre' %}</a></li>
+                                    {% endif %}
+                                    <li><a href="?page={{ page_obj.number }}&q={{ query }}" class="page-number">{{ page_obj.number }}</a></li>
+                                {% if page_obj.has_next %}
+
+                                    <li><a href="?page={{ page_obj.next_page_number }}&q={{ query }}" class="page-number">{% trans 'Next' %}</a></li>
+                                {% endif %}
+                                </ul>
+                            </nav>
         </div>
+    {% include 'cart/cart_sidebar.html' %}
     </div>
 {% endblock %}
