@@ -12,7 +12,7 @@
     <div class="shop-products">
         <div class="row">
             {% for product in page_obj %}
-                <div class="col-xl-4 col-sm-6" style="border-right-style: groove">
+                <div class="col-xl-4 col-sm-6" style="border: 1px solid black; margin: 1px;width: 500px">
                     <div class="payne-product">
                         <div class="product__inner">
                             <div class="product__image">
@@ -47,7 +47,6 @@
                     </div>
                 </div>
             {% endfor %}
-            <hr>
         <nav class="pagination-wrap">
                                 <ul class="pagination">
                                     {% if page_obj.has_previous %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-26 17:21+0330\n"
+"POT-Creation-Date: 2023-03-01 10:26+0330\n"
 "PO-Revision-Date: 2023-01-13 08:59+0000\n"
 "Last-Translator: soori naj <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -209,9 +209,77 @@ msgstr ""
 msgid "Your password is now reset."
 msgstr ""
 
+#: .\templates\footer.html:16
+msgid "88 Saadatabad Tehran city"
+msgstr "88 شهر تهران سعادت آباد"
+
+#: .\templates\footer.html:17
+msgid "+98 9358888888"
+msgstr "+98 9358888888"
+
+#: .\templates\footer.html:24
+msgid "Store Menu"
+msgstr "منوی فروشگاه"
+
+#: .\templates\footer.html:77
+msgid "Question"
+msgstr "سوال"
+
+#: .\templates\footer.html:83
+msgid "Contact US"
+msgstr " تماس با ما"
+
+#: .\templates\footer.html:89
+msgid "Track Order"
+msgstr "پیگیری سفارش"
+
+#: .\templates\footer.html:95
+msgid "Support"
+msgstr "پشتیبانی"
+
+#: .\templates\footer.html:101
+msgid "Shipping & Delivery"
+msgstr "حمل و نقل و تحویل"
+
+#: .\templates\footer.html:107
+msgid "FAQs"
+msgstr "سوالات متداول"
+
+#: .\templates\footer.html:116 .\templates\footer.html:121
+msgid "My Account"
+msgstr "حساب من"
+
+#: .\templates\footer.html:127
+msgid "Order Delivery"
+msgstr "تحویل سفارش"
+
+#: .\templates\footer.html:133
+msgid "Wishlist"
+msgstr "لیست علاقه مندیها"
+
+#: .\templates\footer.html:139
+msgid "Newsletter"
+msgstr "خبرنامه"
+
+#: .\templates\footer.html:153
+msgid "Facebook"
+msgstr "فیس بوک"
+
+#: .\templates\footer.html:157
+msgid "Twitter"
+msgstr "توییتر"
+
+#: .\templates\footer.html:161
+msgid "Linkedin"
+msgstr "لینکدین"
+
+#: .\templates\footer.html:165
+msgid "Instagram"
+msgstr "اینستاگرام"
+
 #: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
 msgid "Search files"
-msgstr ""
+msgstr "جستجوی فایل ها"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
 msgid "Select an image to embed"

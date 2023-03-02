@@ -172,7 +172,7 @@
                             </div>
                             <div class="product-footer-meta">
                                 <p><span>{% trans 'Category:' %}</span>
-                                    <a href="{% url 'products_by_category' product.category.id %}">{{ product.category }}</a>
+                                    <a href="{% url 'products_by_category' product.category.id %}">{{ product.category.get_name }}</a>
 
                                 </p>
                             </div>
@@ -338,7 +338,7 @@
                             ]'>
                             {% for product in related_products %}
 
-                            <div class="item">
+                            <div class="item" style="border: 1px solid black; padding: 10px; margin: 10px;">
                                 <div class="payne-product">
                                     <div class="product__inner">
                                         <div class="product__image">
