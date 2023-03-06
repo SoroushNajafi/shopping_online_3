@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 
 from .forms import ContactUsForm, MyProfileForm
 from products.models import Product
@@ -66,7 +67,7 @@ def search_result_view(request):
 #         query = self.request.GET.get('q')
 #         context['query'] = query
 #         return context
-
+@login_required()
 def my_profile_view(request):
     profile_form = MyProfileForm()
     user = request.user

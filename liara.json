@@ -1,0 +1,8 @@
+{
+  "disks": [
+    {
+      "name": "payne-shop-disk",
+      "mountTo": "media"
+    }
+  ]
+}

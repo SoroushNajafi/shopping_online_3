@@ -11,7 +11,7 @@ from .forms import CommentForm
 
 class ProductsByCategoryListView(generic.ListView):
     model = Category
-    template_name = 'products/products_By_category.html'
+    template_name = 'products/products_by_category.html'
     paginate_by = 3
 
     def get_queryset(self):
