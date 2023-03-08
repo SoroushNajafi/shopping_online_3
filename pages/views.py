@@ -31,7 +31,7 @@ def contact_us_view(request):
             sent_email = cleaned_data['email']
             send_mail(_('Thank you for contacting us'),
                       _(f'Hi {sent_name}, you contacted us with {sent_email}, we will reach back to you soon.'),
-                      None,
+                      'payne.shop.online@gmail.com',
                       [sent_email],
                       fail_silently=False,
                       )
