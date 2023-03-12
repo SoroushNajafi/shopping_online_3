@@ -55,7 +55,7 @@
                                 <h2>{% trans 'Contact Us' %}</h2>
                                 <hr class="delimeter">
                             </div>
-                            <form action="{% url 'contact_us' %}" class="form" id="contact-form" method="post">
+                            <form action="{% url 'contact_us' %}" method="post">
                                 {% csrf_token %}
                                 <input type="text" name="name" id="con_name" class="form__input mb--30"
                                        placeholder="{% trans 'Name*' %}">
